@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
 const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
 `;
 
 export default StyledForm;

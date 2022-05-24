@@ -7,10 +7,14 @@ export default function RecipeForm() {
     <>
       <StyledForm>
         <label>
-          <StyledInput></StyledInput>
+          <StyledInput
+            type="text"
+            size="30"
+            placeholder="Add recipe title"
+          ></StyledInput>
         </label>
 
-        <StyledButton>Submit</StyledButton>
+        <StyledButton>Save</StyledButton>
       </StyledForm>
     </>
   );
