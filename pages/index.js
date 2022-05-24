@@ -1,3 +1,9 @@
+import ListEntry from '../components/ListEntry';
+
 export default function Home() {
-  return <h1>my Recipes</h1>;
+  return (
+    <>
+      <ListEntry></ListEntry>
+    </>
+  );
 }
