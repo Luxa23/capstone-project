@@ -1,7 +1,22 @@
-import '../styles/globals.css';
+import { createGlobalStyle } from 'styled-components';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+const GlobalStyle = createGlobalStyle`
+* {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root { 
+    --primary-color : #fecdd6;
+    }
+   
+`;
+
+export default function MyApp({ Component, ...pageProps }) {
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
+  );
 }
-
-export default MyApp;
