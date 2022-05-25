@@ -7,7 +7,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root { 
-    --primary-color : #fecdd6;
+    --primary-color : #FD6F8E;
+    --secondary-color : #FEA3B4;
+    --tertiary-color : #FECDD6;
+
+    }
+
+    body {
+      margin: 0;
     }
    
 `;
