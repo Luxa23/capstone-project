@@ -1,17 +1,15 @@
-import StyledInput from './StyledComponents/StyledInput';
-import StyledButton from './StyledComponents/StyledButton';
-import StyledForm from './StyledComponents/StyledForm';
+import {
+  StyledForm,
+  StyledButton,
+  StyledInput,
+} from '../components/StyledComponents';
 
 export default function RecipeForm() {
   return (
     <>
       <StyledForm>
         <label>
-          <StyledInput
-            type="text"
-            size="30"
-            placeholder="Add recipe title"
-          ></StyledInput>
+          <StyledInput type="text" size="30" placeholder="Add recipe title" />
         </label>
 
         <StyledButton>Save</StyledButton>

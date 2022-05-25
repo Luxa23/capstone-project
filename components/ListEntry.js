@@ -1,5 +1,4 @@
-import StyledH2 from './StyledComponents/StyledH2';
-import StyledListEntry from './StyledComponents/StyledListEntry';
+import { StyledH2, StyledListEntry } from '../components/StyledComponents';
 
 export default function ListEntry({ children }) {
   return (

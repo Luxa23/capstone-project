@@ -7,7 +7,7 @@ export default function Home() {
       <ListEntry>Strawberry Cake</ListEntry>
       <ListEntry>Chocolate Muffins</ListEntry>
       <ListEntry>Coffee Cake</ListEntry>
-      <RecipeForm></RecipeForm>
+      <RecipeForm />
     </>
   );
 }
