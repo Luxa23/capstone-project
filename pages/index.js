@@ -4,9 +4,12 @@ import RecipeForm from '../components/RecipeForm';
 export default function Home() {
   return (
     <>
-      <ListEntry>Strawberry Cake</ListEntry>
-      <ListEntry>Chocolate Muffins</ListEntry>
-      <ListEntry>Coffee Cake</ListEntry>
+      <ul>
+        <ListEntry>Strawberry Cake</ListEntry>
+        <ListEntry>Chocolate Muffins</ListEntry>
+        <ListEntry>Coffee Cake</ListEntry>
+      </ul>
+
       <RecipeForm />
     </>
   );
