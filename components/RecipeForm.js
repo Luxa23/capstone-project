@@ -8,9 +8,7 @@ export default function RecipeForm() {
   return (
     <>
       <StyledForm>
-        <label>
-          <StyledInput type="text" size="30" placeholder="Add recipe title" />
-        </label>
+        <StyledInput type="text" size="30" placeholder="Add recipe title" />
 
         <StyledButton>Save</StyledButton>
       </StyledForm>

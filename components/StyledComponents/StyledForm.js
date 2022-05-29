@@ -4,6 +4,7 @@ const StyledForm = styled.form`
   display: grid;
   grid-template-rows: 1fr 1fr;
   justify-content: center;
+  align-content: end;
   position: fixed;
   bottom: 0;
   width: 100vw;

@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
     --primary-color : #FD6F8E;
     --secondary-color : #FEA3B4;
     --tertiary-color : #FECDD6;
+    
+
+    --font-family : "Inter", sans-serif;
 
     }
 
