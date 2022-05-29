@@ -1,3 +1,13 @@
+import ListEntry from '../components/ListEntry';
+import RecipeForm from '../components/RecipeForm';
+
 export default function Home() {
-  return <h1>my Recipes</h1>;
+  return (
+    <>
+      <ListEntry>Strawberry Cake</ListEntry>
+      <ListEntry>Chocolate Muffins</ListEntry>
+      <ListEntry>Coffee Cake</ListEntry>
+      <RecipeForm />
+    </>
+  );
 }
