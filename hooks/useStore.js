@@ -1,11 +1,17 @@
 import create from 'zustand';
+import { nanoid } from 'nanoid';
 
 const useStore = create(set => {
   return {
-    recipeList: [{ recipeTitle: 'Cheesecake' }, { recipeTitle: 'Carrotcake' }],
+    recipeList: [
+      { id: nanoid(), recipeTitle: 'Cheesecake' },
+      { id: nanoid(), recipeTitle: 'Carrotcake' },
+    ],
     addRecipe: recipeTitle => {
       set(state => {
-        return { recipeList: [{ recipeTitle }, ...state.recipeList] };
+        return {
+          recipeList: [{ id: nanoid(), recipeTitle }, ...state.recipeList],
+        };
       });
     },
   };

@@ -24,6 +24,8 @@ export default function RecipeForm() {
           required
           type="text"
           size="30"
+          minLength={2}
+          maxLength={100}
           placeholder="Add recipe title"
           value={inputValue}
           onChange={event => {

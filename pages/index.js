@@ -9,7 +9,9 @@ export default function Home() {
     <>
       <ul>
         {recipeList.map(recipeName => {
-          return <ListEntry>{recipeName.recipeTitle}</ListEntry>;
+          return (
+            <ListEntry key={recipeName.id}>{recipeName.recipeTitle}</ListEntry>
+          );
         })}
       </ul>
 
