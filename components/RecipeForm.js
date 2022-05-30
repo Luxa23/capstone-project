@@ -17,7 +17,6 @@ export default function RecipeForm() {
         onSubmit={event => {
           event.preventDefault();
           const trimmedValue = inputValue.trim();
-          console.log(trimmedValue.length);
           if (trimmedValue.length > 0) {
             addRecipe(trimmedValue);
             setInputValue('');
