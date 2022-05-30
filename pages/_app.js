@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import useHasHydrated from '../hooks/useHasHydrated';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -24,15 +23,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function MyApp({ Component, ...pageProps }) {
-  const isHydrated = useHasHydrated();
   return (
     <>
-      {isHydrated && (
-        <>
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </>
-      )}
+      <GlobalStyle />
+      <Component {...pageProps} />
     </>
   );
 }

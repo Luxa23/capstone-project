@@ -19,7 +19,19 @@ const useStore = create(
         },
       };
     },
-    { name: 'recipeList' }
+    {
+      name: 'recipeList',
+      getStorage: () => ({
+        setItem: (...args) => window.localStorage.setItem(...args),
+        getItem: async (...args) =>
+          new Promise(resolve => {
+            setTimeout(() => {
+              resolve(window.localStorage.getItem(...args));
+            }, 0);
+          }),
+        removeItem: (...args) => window.localStorage.removeItem(...args),
+      }),
+    }
   )
 );
 
