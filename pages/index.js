@@ -1,13 +1,18 @@
 import ListEntry from '../components/ListEntry';
 import RecipeForm from '../components/RecipeForm';
 
+import useStore from '../hooks/useStore';
+
 export default function Home() {
+  const recipeList = useStore(state => state.recipeList);
   return (
     <>
       <ul>
-        <ListEntry>Strawberry Cake</ListEntry>
-        <ListEntry>Chocolate Muffins</ListEntry>
-        <ListEntry>Coffee Cake</ListEntry>
+        {recipeList.map(recipeName => {
+          return (
+            <ListEntry key={recipeName.id}>{recipeName.recipeTitle}</ListEntry>
+          );
+        })}
       </ul>
 
       <RecipeForm />
