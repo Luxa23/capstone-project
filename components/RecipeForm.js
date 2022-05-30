@@ -16,8 +16,12 @@ export default function RecipeForm() {
       <StyledForm
         onSubmit={event => {
           event.preventDefault();
-          addRecipe(inputValue);
-          setInputValue('');
+          const trimmedValue = inputValue.trim();
+          console.log(trimmedValue.length);
+          if (trimmedValue.length > 0) {
+            addRecipe(trimmedValue);
+            setInputValue('');
+          }
         }}
       >
         <StyledInput
