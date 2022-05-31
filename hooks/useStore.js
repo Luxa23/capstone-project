@@ -25,9 +25,13 @@ const useStore = create(
         setItem: (...args) => window.localStorage.setItem(...args),
         getItem: async (...args) =>
           new Promise(resolve => {
-            setTimeout(() => {
-              resolve(window.localStorage.getItem(...args));
-            }, 0);
+            if (typeof window === 'undefined') {
+              resolve(null);
+            } else {
+              setTimeout(() => {
+                resolve(window.localStorage.getItem(...args));
+              }, 0);
+            }
           }),
         removeItem: (...args) => window.localStorage.removeItem(...args),
       }),
