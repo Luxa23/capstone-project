@@ -17,6 +17,15 @@ const useStore = create(
             };
           });
         },
+        deleteRecipe: id => {
+          set(state => {
+            return {
+              recipeList: state.recipeList.filter(
+                recipeTitle_ => recipeTitle_.id !== id
+              ),
+            };
+          });
+        },
       };
     },
     {
