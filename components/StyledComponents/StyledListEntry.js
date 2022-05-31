@@ -5,7 +5,7 @@ const StyledListEntry = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 20px;
+  padding-right: 25px;
 `;
 
 export default StyledListEntry;
