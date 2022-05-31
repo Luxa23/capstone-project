@@ -13,14 +13,15 @@ export default function ListEntry({ children, id }) {
       {hydrated && (
         <StyledListEntry>
           <StyledH2>{children}</StyledH2>
-          <button
-            type="button"
+
+          <Image
             onClick={() => {
               deleteRecipe(id);
             }}
-          >
-            <Image src={'/bin-icon.svg'} width="20px" height="20px" />
-          </button>
+            src={'/bin-icon.svg'}
+            width="20px"
+            height="20px"
+          />
         </StyledListEntry>
       )}
     </>
