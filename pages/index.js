@@ -1,8 +1,9 @@
 import ListEntry from '../components/ListEntry';
-import { StyledImagePlus } from '../components/StyledComponents';
-import Image from 'next/image';
+import { StyledIcon } from '../components/StyledComponents';
+
 import Link from 'next/link';
 import useStore from '../hooks/useStore';
+import Plusicon from '../public/plusicon.svg';
 
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
@@ -18,9 +19,9 @@ export default function Home() {
         })}
       </ul>
       <Link passHref href="/new-recipe">
-        <StyledImagePlus>
-          <Image src={'/plus-icon.svg'} width="75px" height="75px" />
-        </StyledImagePlus>
+        <StyledIcon>
+          <Plusicon width="75px" height="75px" />
+        </StyledIcon>
       </Link>
     </>
   );
