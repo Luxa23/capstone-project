@@ -4,7 +4,6 @@ import StyledH2 from './StyledH2';
 import StyledInput from './StyledInput';
 import StyledListEntry from './StyledListEntry';
 import StyledImagePlus from './StyledImagePlus';
-import StyledImageBack from './StyledImagePlus';
 
 export {
   StyledButton,
@@ -13,5 +12,4 @@ export {
   StyledInput,
   StyledListEntry,
   StyledImagePlus,
-  StyledImageBack,
 };

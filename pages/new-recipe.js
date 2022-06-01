@@ -1,15 +1,16 @@
 import RecipeForm from '../components/RecipeForm';
 import Image from 'next/image';
-import StyledImageBack from '../components/StyledComponents/StyledImageBack';
+import StyledA from '../components/StyledComponents/StyledA';
 import Link from 'next/link';
 
 export default function NewRecipe() {
   return (
     <>
       <Link passHref href="/">
-        <StyledImageBack>
+        <StyledA>
           <Image src={'/arrow-left.svg'} width="20px" height="20px" />
-        </StyledImageBack>
+          back
+        </StyledA>
       </Link>
 
       <RecipeForm />
