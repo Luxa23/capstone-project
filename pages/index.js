@@ -20,7 +20,7 @@ export default function Home() {
       </ul>
       <Link passHref href="/new-recipe">
         <StyledIcon>
-          <Plusicon width="75px" height="75px" />
+          <Plusicon width="75px" height="75px" variant="Plusicon" />
         </StyledIcon>
       </Link>
     </>
