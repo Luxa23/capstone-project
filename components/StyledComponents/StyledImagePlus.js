@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const StyledImage = styled.div`
+const StyledImagePlus = styled.div`
   position: fixed;
   bottom: 30px;
   right: 40px;
 `;
 
-export default StyledImage;
+export default StyledImagePlus;

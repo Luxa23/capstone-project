@@ -1,5 +1,5 @@
 import ListEntry from '../components/ListEntry';
-import { StyledImage } from '../components/StyledComponents';
+import { StyledImagePlus } from '../components/StyledComponents';
 import Image from 'next/image';
 import Link from 'next/link';
 import useStore from '../hooks/useStore';
@@ -18,9 +18,9 @@ export default function Home() {
         })}
       </ul>
       <Link passHref href="/new-recipe">
-        <StyledImage>
+        <StyledImagePlus>
           <Image src={'/plus-icon.svg'} width="75px" height="75px" />
-        </StyledImage>
+        </StyledImagePlus>
       </Link>
     </>
   );
