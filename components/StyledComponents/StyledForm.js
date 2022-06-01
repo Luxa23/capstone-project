@@ -3,13 +3,20 @@ import styled from 'styled-components';
 const StyledForm = styled.form`
   background: #fff5f6;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  justify-content: center;
+  height: 10rem;
+  justify-items: center;
   align-content: end;
-  row-gap: 10px;
+  row-gap: 1rem;
   position: fixed;
   bottom: 0;
-  width: 100vw;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+
+  & button,
+  & input {
+    width: 17rem;
+  }
 `;
 
 export default StyledForm;

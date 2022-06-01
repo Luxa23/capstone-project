@@ -9,7 +9,6 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-weight: 300;
   color: #666666;
-  margin: 1.5rem 1rem 0.3rem;
 `;
 
 export default StyledInput;
