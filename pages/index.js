@@ -1,5 +1,4 @@
 import ListEntry from '../components/ListEntry';
-import RecipeForm from '../components/RecipeForm';
 
 import useStore from '../hooks/useStore';
 
@@ -16,8 +15,6 @@ export default function Home() {
           );
         })}
       </ul>
-
-      <RecipeForm />
     </>
   );
 }
