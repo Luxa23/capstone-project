@@ -18,7 +18,7 @@ export default function ListEntry({ children, id }) {
       {hydrated && (
         <StyledListEntry>
           <StyledH2>{children}</StyledH2>
-          <StyledButton className="button--icon">
+          <StyledButton className="button--deleteicon">
             <Binicon
               onClick={() => {
                 deleteRecipe(id);
