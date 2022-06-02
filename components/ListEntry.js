@@ -1,5 +1,5 @@
 import { StyledH2, StyledListEntry } from '../components/StyledComponents';
-import Image from 'next/image';
+
 import useStore from '../hooks/useStore';
 import useHydration from '../hooks/useHydration';
 import Binicon from '../public/binicon.svg';
