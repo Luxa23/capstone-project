@@ -4,9 +4,9 @@ const StyledIcon = styled.div`
   position: fixed;
   bottom: 30px;
   right: 40px;
-  fill: #89123e;
+  fill: var(--primary-color);
   &:hover {
-    fill: #e31b54;
+    fill: #89123e;
   }
 `;
 
