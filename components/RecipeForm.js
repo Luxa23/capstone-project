@@ -30,7 +30,6 @@ export default function RecipeForm() {
           <StyledInput
             required
             type="text"
-            size="30"
             minLength={2}
             maxLength={100}
             placeholder="Add recipe titles"

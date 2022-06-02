@@ -1,7 +1,9 @@
 import ListEntry from '../components/ListEntry';
-import RecipeForm from '../components/RecipeForm';
+import { StyledButton } from '../components/StyledComponents';
 
+import Link from 'next/link';
 import useStore from '../hooks/useStore';
+import Plusicon from '../public/plusicon.svg';
 
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
@@ -16,8 +18,11 @@ export default function Home() {
           );
         })}
       </ul>
-
-      <RecipeForm />
+      <Link passHref href="/new-recipe">
+        <StyledButton className="button--plusicon">
+          <Plusicon width="75px" height="75px" />
+        </StyledButton>
+      </Link>
     </>
   );
 }

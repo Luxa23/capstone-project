@@ -3,14 +3,34 @@ import styled from 'styled-components';
 const StyledButton = styled.button`
   background-color: var(--secondary-color);
   border: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family);
   font-size: 20px;
   font-weight: 500;
   color: #ffffff;
-  border-radius: 50px;
+  height: 3rem;
+  border-radius: 1.5rem;
   padding: 0.75rem;
-  margin: 0.3rem 1rem 1.5rem;
   box-shadow: 0 0 30px var(--secondary-color);
+
+  &.button--deleteicon {
+    background-color: white;
+    box-shadow: none;
+  }
+
+  &.button--plusicon {
+    background-color: transparent;
+    box-shadow: none;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    padding: 0;
+    fill: var(--primary-color);
+    height: 5rem;
+
+    &:hover {
+      fill: #89123e;
+    }
+  }
 `;
 
 export default StyledButton;
