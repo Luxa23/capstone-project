@@ -25,6 +25,7 @@ const StyledButton = styled.button`
     right: 40px;
     padding: 0;
     fill: var(--primary-color);
+    height: 5rem;
 
     &:hover {
       fill: #89123e;
