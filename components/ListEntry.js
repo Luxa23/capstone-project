@@ -1,4 +1,8 @@
-import { StyledH2, StyledListEntry } from '../components/StyledComponents';
+import {
+  StyledH2,
+  StyledListEntry,
+  StyledButton,
+} from '../components/StyledComponents';
 
 import useStore from '../hooks/useStore';
 import useHydration from '../hooks/useHydration';
@@ -14,14 +18,15 @@ export default function ListEntry({ children, id }) {
       {hydrated && (
         <StyledListEntry>
           <StyledH2>{children}</StyledH2>
-
-          <Binicon
-            onClick={() => {
-              deleteRecipe(id);
-            }}
-            width="20px"
-            height="20px"
-          />
+          <StyledButton className="button--icon">
+            <Binicon
+              onClick={() => {
+                deleteRecipe(id);
+              }}
+              width="20px"
+              height="20px"
+            />
+          </StyledButton>
         </StyledListEntry>
       )}
     </>

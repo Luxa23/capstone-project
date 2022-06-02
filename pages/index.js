@@ -1,5 +1,5 @@
 import ListEntry from '../components/ListEntry';
-import { StyledIcon } from '../components/StyledComponents';
+import { StyledButton } from '../components/StyledComponents';
 
 import Link from 'next/link';
 import useStore from '../hooks/useStore';
@@ -19,9 +19,9 @@ export default function Home() {
         })}
       </ul>
       <Link passHref href="/new-recipe">
-        <StyledIcon>
-          <Plusicon width="75px" height="75px" variant="Plusicon" />
-        </StyledIcon>
+        <StyledButton className="button--plusicon">
+          <Plusicon width="75px" height="75px" />
+        </StyledButton>
       </Link>
     </>
   );
