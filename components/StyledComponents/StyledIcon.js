@@ -10,7 +10,7 @@ const StyledIcon = styled.div`
     variant === 'PlusIcon' &&
     css`
       fill: #e31b54;
-    `}
+    `}/* include arrow left and bin */
 `;
 
 export default StyledIcon;
