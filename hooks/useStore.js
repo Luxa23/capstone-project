@@ -19,7 +19,7 @@ const useStore = create(
             id: toastTypes.ADD,
             shown: false,
             title: 'Saved',
-            description: 'Your recipe was saved',
+            description: 'We saved your recipe',
           },
         ],
 
