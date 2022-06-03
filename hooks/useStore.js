@@ -2,6 +2,10 @@ import create from 'zustand';
 import { nanoid } from 'nanoid';
 import { persist } from 'zustand/middleware';
 
+const toastTypes = {
+  ADD: 1,
+};
+
 const useStore = create(
   persist(
     set => {
@@ -10,8 +14,18 @@ const useStore = create(
           { id: nanoid(), recipeTitle: 'Cheesecake' },
           { id: nanoid(), recipeTitle: 'Carrotcake' },
         ],
+        toasts: [
+          {
+            id: toastTypes.ADD,
+            shown: false,
+            title: 'Saved',
+            description: 'We saved your recipe',
+          },
+        ],
+
         addRecipe: recipeTitle => {
           set(state => {
+            state.toggleToast(toastTypes.ADD);
             return {
               recipeList: [{ id: nanoid(), recipeTitle }, ...state.recipeList],
             };
@@ -25,6 +39,22 @@ const useStore = create(
               ),
             };
           });
+        },
+        toggleToast: toastId => {
+          set(state => {
+            return {
+              toasts: state.toasts.map(toast =>
+                toast.id === toastId ? { ...toast, shown: true } : toast
+              ),
+            };
+          });
+          setTimeout(() => {
+            set(state => {
+              return {
+                toasts: state.toasts.map(toast => ({ ...toast, shown: false })),
+              };
+            });
+          }, 3000);
         },
       };
     },
