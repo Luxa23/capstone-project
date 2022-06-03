@@ -54,7 +54,7 @@ const useStore = create(
                 toasts: state.toasts.map(toast => ({ ...toast, shown: false })),
               };
             });
-          }, 2000);
+          }, 3000);
         },
       };
     },
