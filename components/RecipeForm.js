@@ -7,6 +7,7 @@ import { useState } from 'react';
 import useStore from '../hooks/useStore';
 import useHydration from '../hooks/useHydration';
 import Toast from './Toast';
+import TypeOfOrigin from './TypeOfOrigin';
 
 export default function RecipeForm() {
   const [inputValue, setInputValue] = useState('');
@@ -39,7 +40,7 @@ export default function RecipeForm() {
               setInputValue(event.target.value);
             }}
           />
-
+          <TypeOfOrigin />
           <StyledButton type="submit">Save</StyledButton>
         </StyledForm>
       )}

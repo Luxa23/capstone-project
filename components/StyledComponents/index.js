@@ -4,6 +4,8 @@ import StyledH2 from './StyledH2';
 import StyledInput from './StyledInput';
 import StyledListEntry from './StyledListEntry';
 import StyledToastContainer from './StyledToastContainer';
+import StyledRadioButtonGroup from './StyledRadioButtonGroup';
+import StyledPageContainer from './StyledPageContainer';
 
 export {
   StyledButton,
@@ -12,4 +14,6 @@ export {
   StyledInput,
   StyledListEntry,
   StyledToastContainer,
+  StyledRadioButtonGroup,
+  StyledPageContainer,
 };
