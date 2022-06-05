@@ -11,8 +11,8 @@ const useStore = create(
     set => {
       return {
         recipeList: [
-          { id: nanoid(), recipeTitle: 'Cheesecake' },
-          { id: nanoid(), recipeTitle: 'Carrotcake' },
+          { id: nanoid(), recipeTitle: 'Cheesecake', origin: 'book' },
+          { id: nanoid(), recipeTitle: 'Carrotcake', origin: 'website' },
         ],
         toasts: [
           {
@@ -23,11 +23,14 @@ const useStore = create(
           },
         ],
 
-        addRecipe: recipeTitle => {
+        addRecipe: (recipeTitle, origin) => {
           set(state => {
             state.toggleToast(toastTypes.ADD);
             return {
-              recipeList: [{ id: nanoid(), recipeTitle }, ...state.recipeList],
+              recipeList: [
+                { id: nanoid(), recipeTitle, origin },
+                ...state.recipeList,
+              ],
             };
           });
         },
