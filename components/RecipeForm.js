@@ -43,7 +43,6 @@ export default function RecipeForm() {
             }}
           />
           <StyledRadioButtonGroup>
-            <p>Test: {origin}</p>
             <p>Select the origin of the recipe:</p>
             <div>
               <input
@@ -51,6 +50,7 @@ export default function RecipeForm() {
                 id="Book"
                 name="origin"
                 value="Book"
+                required
                 checked={origin === 'Book'}
                 onChange={event => {
                   setOrigin(event.target.value);
