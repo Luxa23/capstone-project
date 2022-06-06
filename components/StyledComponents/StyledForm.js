@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledForm = styled.form`
   background: #fff5f6;
   display: grid;
-  height: 10rem;
+  height: 18rem;
   justify-items: center;
   align-content: end;
   row-gap: 1rem;
@@ -16,6 +16,10 @@ const StyledForm = styled.form`
   & button,
   & input {
     width: 17rem;
+  }
+
+  & p {
+    font-family: var(--font-family);
   }
 `;
 
