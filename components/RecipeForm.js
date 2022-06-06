@@ -25,7 +25,6 @@ export default function RecipeForm() {
             const trimmedValue = inputValue.trim();
             if (trimmedValue.length > 0) {
               addRecipe(trimmedValue, origin);
-              console.log(trimmedValue, origin);
               setInputValue('');
               setOrigin('');
             }
