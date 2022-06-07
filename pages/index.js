@@ -1,5 +1,8 @@
 import ListEntry from '../components/ListEntry';
-import { StyledButton } from '../components/StyledComponents';
+import {
+  StyledButton,
+  StyledPageContainer,
+} from '../components/StyledComponents';
 
 import Link from 'next/link';
 import useStore from '../hooks/useStore';
