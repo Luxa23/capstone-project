@@ -10,7 +10,10 @@ import useHydration from '../hooks/useHydration';
 import Toast from './Toast';
 
 export default function RecipeForm() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValueRecipeTitle, setInputValueRecipeTitle] = useState('');
+  const [inputValueBookTitle, setInputValueBookTitle] = useState('');
+  const [inputValueBookAuthor, setInputValueBookAuthor] = useState('');
+  const [inputValueBookPage, setInputValueBookPage] = useState('');
   const [origin, setOrigin] = useState('');
   const addRecipe = useStore(state => state.addRecipe);
 
@@ -22,11 +25,14 @@ export default function RecipeForm() {
         <StyledForm
           onSubmit={event => {
             event.preventDefault();
-            const trimmedValue = inputValue.trim();
+            const trimmedValue = inputValueRecipeTitle.trim();
             if (trimmedValue.length > 0) {
               addRecipe(trimmedValue, origin);
-              setInputValue('');
+              setInputValueRecipeTitle('');
               setOrigin('');
+              setInputValueBookAuthor('');
+              setInputValueBookTitle('');
+              setInputValueBookPage('');
             }
           }}
         >
@@ -35,10 +41,10 @@ export default function RecipeForm() {
             type="text"
             minLength={2}
             maxLength={100}
-            placeholder="Add recipe title"
-            value={inputValue}
+            placeholder="Recipe title"
+            value={inputValueRecipeTitle}
             onChange={event => {
-              setInputValue(event.target.value);
+              setInputValueRecipeTitle(event.target.value);
             }}
           />
           <StyledRadioButtonGroup>
@@ -84,6 +90,39 @@ export default function RecipeForm() {
               <label htmlFor="Other">Other</label>
             </div>
           </StyledRadioButtonGroup>
+          <StyledInput
+            required
+            type="text"
+            minLength={2}
+            maxLength={100}
+            placeholder="Book title"
+            value={inputValueBookTitle}
+            onChange={event => {
+              setInputValueBookTitle(event.target.value);
+            }}
+          ></StyledInput>
+          <StyledInput
+            required
+            type="text"
+            minLength={2}
+            maxLength={100}
+            placeholder="Author"
+            value={inputValueBookAuthor}
+            onChange={event => {
+              setInputValueBookAuthor(event.target.value);
+            }}
+          ></StyledInput>
+          <StyledInput
+            required
+            type="text"
+            minLength={1}
+            maxLength={4}
+            placeholder="Page"
+            value={inputValueBookPage}
+            onChange={event => {
+              setInputValueBookPage(event.target.value);
+            }}
+          ></StyledInput>
           <StyledButton type="submit">Save</StyledButton>
         </StyledForm>
       )}

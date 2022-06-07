@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const StyledForm = styled.form`
   background: #fff5f6;
   display: grid;
-  height: 18rem;
   justify-items: center;
   align-content: end;
   row-gap: 1rem;
