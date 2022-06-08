@@ -60,7 +60,7 @@ export default function RecipeForm() {
             type="text"
             minLength={2}
             maxLength={100}
-            placeholder="Recipe title"
+            placeholder="recipe title"
             value={inputValueRecipeTitle}
             onChange={event => {
               setInputValueRecipeTitle(event.target.value);
@@ -117,7 +117,7 @@ export default function RecipeForm() {
                 type="text"
                 minLength={2}
                 maxLength={100}
-                placeholder="Book title"
+                placeholder="book title"
                 value={inputValueBookTitle}
                 onChange={event => {
                   setInputValueBookTitle(event.target.value);
@@ -128,7 +128,7 @@ export default function RecipeForm() {
                 type="text"
                 minLength={2}
                 maxLength={100}
-                placeholder="Author"
+                placeholder="author"
                 value={inputValueBookAuthor}
                 onChange={event => {
                   setInputValueBookAuthor(event.target.value);
@@ -139,7 +139,7 @@ export default function RecipeForm() {
                 type="number"
                 minLength={1}
                 maxLength={3}
-                placeholder="Page"
+                placeholder="page"
                 value={inputValueBookPage}
                 onChange={event => {
                   setInputValueBookPage(event.target.value);
@@ -155,7 +155,7 @@ export default function RecipeForm() {
                 type="test"
                 minLength={1}
                 maxLength={100}
-                placeholder="Website"
+                placeholder="website"
                 value={inputValueWebsiteName}
                 onChange={event => {
                   setInputValueWebsiteName(event.target.value);
