@@ -18,6 +18,10 @@ const useStore = create(
             bookTitle: 'SWEET: Süße Köstlichkeiten',
             bookAuthor: 'Yotam Ottolenghi',
             bookPage: '12',
+            websiteName: '',
+            websiteUrl: '',
+            otherSource: '',
+            otherLocation: '',
           },
           { id: nanoid(), recipeTitle: 'Carrotcake', origin: 'website' },
         ],
@@ -30,7 +34,17 @@ const useStore = create(
           },
         ],
 
-        addRecipe: (recipeTitle, origin, bookTitle, bookAuthor, bookPage) => {
+        addRecipe: (
+          recipeTitle,
+          origin,
+          bookTitle,
+          bookAuthor,
+          bookPage,
+          websiteName,
+          websiteUrl,
+          otherSource,
+          otherLocation
+        ) => {
           set(state => {
             state.toggleToast(toastTypes.ADD);
             return {
@@ -42,6 +56,10 @@ const useStore = create(
                   bookTitle,
                   bookAuthor,
                   bookPage,
+                  websiteName,
+                  websiteUrl,
+                  otherSource,
+                  otherLocation,
                 },
                 ...state.recipeList,
               ],

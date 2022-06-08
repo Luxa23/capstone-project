@@ -14,6 +14,11 @@ export default function RecipeForm() {
   const [inputValueBookTitle, setInputValueBookTitle] = useState('');
   const [inputValueBookAuthor, setInputValueBookAuthor] = useState('');
   const [inputValueBookPage, setInputValueBookPage] = useState('');
+  const [inputValueWebsiteName, setInputValueWebsiteName] = useState('');
+  const [inputValueWebsiteUrl, setInputValueWebsiteUrl] = useState('');
+  const [inputValueOtherSource, setInputValueOtherSource] = useState('');
+  const [inputValueOtherLocation, setInputValueOtherLocation] = useState('');
+
   const [origin, setOrigin] = useState('');
   const addRecipe = useStore(state => state.addRecipe);
 
@@ -32,13 +37,21 @@ export default function RecipeForm() {
                 origin,
                 inputValueBookAuthor,
                 inputValueBookPage,
-                inputValueBookTitle
+                inputValueBookTitle,
+                inputValueWebsiteName,
+                inputValueWebsiteUrl,
+                inputValueOtherLocation,
+                inputValueOtherSource
               );
               setInputValueRecipeTitle('');
               setOrigin('');
               setInputValueBookAuthor('');
               setInputValueBookTitle('');
               setInputValueBookPage('');
+              setInputValueWebsiteName(''),
+                setInputValueWebsiteUrl(''),
+                setInputValueOtherLocation(''),
+                setInputValueOtherSource('');
             }
           }}
         >
@@ -96,39 +109,97 @@ export default function RecipeForm() {
               <label htmlFor="Other">Other</label>
             </div>
           </StyledRadioButtonGroup>
-          <StyledInput
-            required
-            type="text"
-            minLength={2}
-            maxLength={100}
-            placeholder="Book title"
-            value={inputValueBookTitle}
-            onChange={event => {
-              setInputValueBookTitle(event.target.value);
-            }}
-          ></StyledInput>
-          <StyledInput
-            required
-            type="text"
-            minLength={2}
-            maxLength={100}
-            placeholder="Author"
-            value={inputValueBookAuthor}
-            onChange={event => {
-              setInputValueBookAuthor(event.target.value);
-            }}
-          ></StyledInput>
-          <StyledInput
-            required
-            type="text"
-            minLength={1}
-            maxLength={4}
-            placeholder="Page"
-            value={inputValueBookPage}
-            onChange={event => {
-              setInputValueBookPage(event.target.value);
-            }}
-          ></StyledInput>
+          {/* book entry */}
+          {origin === 'Book' && (
+            <>
+              <StyledInput
+                required
+                type="text"
+                minLength={2}
+                maxLength={100}
+                placeholder="Book title"
+                value={inputValueBookTitle}
+                onChange={event => {
+                  setInputValueBookTitle(event.target.value);
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="text"
+                minLength={2}
+                maxLength={100}
+                placeholder="Author"
+                value={inputValueBookAuthor}
+                onChange={event => {
+                  setInputValueBookAuthor(event.target.value);
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="number"
+                minLength={1}
+                maxLength={3}
+                placeholder="Page"
+                value={inputValueBookPage}
+                onChange={event => {
+                  setInputValueBookPage(event.target.value);
+                }}
+              ></StyledInput>
+            </>
+          )}
+          {/* website */}
+          {origin === 'Website' && (
+            <>
+              <StyledInput
+                required
+                type="test"
+                minLength={1}
+                maxLength={100}
+                placeholder="Website"
+                value={inputValueWebsiteName}
+                onChange={event => {
+                  setInputValueWebsiteName(event.target.value);
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="url"
+                minLength={1}
+                maxLength={100}
+                placeholder="url"
+                value={inputValueWebsiteUrl}
+                onChange={event => {
+                  setInputValueWebsiteUrl(event.target.value);
+                }}
+              ></StyledInput>
+            </>
+          )}
+          {/* other */}
+          {origin === 'Other' && (
+            <>
+              <StyledInput
+                type="text"
+                minLength={1}
+                maxLength={100}
+                placeholder="personal source"
+                value={inputValueOtherSource}
+                onChange={event => {
+                  setInputValueOtherSource(event.target.value);
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="text"
+                minLength={1}
+                maxLength={100}
+                placeholder="location of recipe"
+                value={inputValueOtherLocation}
+                onChange={event => {
+                  setInputValueOtherLocation(event.target.value);
+                }}
+              ></StyledInput>
+            </>
+          )}
           <StyledButton type="submit">Save</StyledButton>
         </StyledForm>
       )}

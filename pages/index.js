@@ -1,8 +1,5 @@
 import ListEntry from '../components/ListEntry';
-import {
-  StyledButton,
-  StyledPageContainer,
-} from '../components/StyledComponents';
+import { StyledButton } from '../components/StyledComponents';
 
 import Link from 'next/link';
 import useStore from '../hooks/useStore';
@@ -13,10 +10,10 @@ export default function Home() {
   return (
     <>
       <ul>
-        {recipeList.map(recipeName => {
+        {recipeList.map(recipe => {
           return (
-            <ListEntry id={recipeName.id} key={recipeName.id}>
-              {recipeName.recipeTitle}
+            <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+              {recipe.recipeTitle}
             </ListEntry>
           );
         })}
