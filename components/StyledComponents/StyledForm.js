@@ -3,14 +3,10 @@ import styled from 'styled-components';
 const StyledForm = styled.form`
   background: #fff5f6;
   display: grid;
+  grid-template-rows: 3rem 8rem 3rem 3rem 3rem 1fr;
   justify-items: center;
   align-content: start;
   row-gap: 1rem;
-  position: fixed;
-  top: 8rem;
-  bottom: 0rem;
-  left: 0;
-  right: 0;
   padding: 1rem;
 
   & button,
@@ -19,9 +15,8 @@ const StyledForm = styled.form`
   }
 
   & button {
-    _position: fixed;
-    _bottom: 2rem;
-    z-index: 2;
+    grid-row: 6 / span 1;
+    align-self: end;
   }
 
   & p {
