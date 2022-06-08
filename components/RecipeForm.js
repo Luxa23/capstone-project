@@ -27,7 +27,13 @@ export default function RecipeForm() {
             event.preventDefault();
             const trimmedValue = inputValueRecipeTitle.trim();
             if (trimmedValue.length > 0) {
-              addRecipe(trimmedValue, origin);
+              addRecipe(
+                trimmedValue,
+                origin,
+                inputValueBookAuthor,
+                inputValueBookPage,
+                inputValueBookTitle
+              );
               setInputValueRecipeTitle('');
               setOrigin('');
               setInputValueBookAuthor('');
