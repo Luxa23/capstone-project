@@ -21,6 +21,7 @@ const StyledForm = styled.form`
   & button {
     position: fixed;
     bottom: 2rem;
+    z-index: 2;
   }
 
   & p {
