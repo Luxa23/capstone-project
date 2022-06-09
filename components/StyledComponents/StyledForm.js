@@ -3,19 +3,19 @@ import styled from 'styled-components';
 const StyledForm = styled.form`
   background: #fff5f6;
   display: grid;
-  height: 18rem;
+  grid-template-rows: 3rem 8rem 3rem 3rem 3rem 1fr;
   justify-items: center;
-  align-content: end;
   row-gap: 1rem;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   padding: 1rem;
 
   & button,
   & input {
     width: 17rem;
+  }
+
+  & button {
+    grid-row: 6 / span 1;
+    align-self: end;
   }
 
   & p {

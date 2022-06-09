@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 const StyledPageContainer = styled.div`
+  height: 100vh;
   display: grid;
-  grid-template-rows: 3rem 5rem;
-  row-gap: 0.25rem;
-  justify-items: start;
+  grid-template-rows: 8rem 1fr;
 `;
 
 export default StyledPageContainer;

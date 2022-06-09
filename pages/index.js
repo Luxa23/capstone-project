@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <>
       <ul>
-        {recipeList.map(recipeName => {
+        {recipeList.map(recipe => {
           return (
-            <ListEntry id={recipeName.id} key={recipeName.id}>
-              {recipeName.recipeTitle}
+            <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+              {recipe.recipeTitle}
             </ListEntry>
           );
         })}

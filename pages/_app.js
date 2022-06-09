@@ -17,7 +17,16 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+      padding: 0;
       margin: 0;
+    }
+
+    h1 {
+      font-family: var(--font-family);
+      font-weight: 600;
+      grid-row-start: 2;
+      grid-row-end: 3;
+
     }
    
 `;

@@ -10,8 +10,20 @@ import useHydration from '../hooks/useHydration';
 import Toast from './Toast';
 
 export default function RecipeForm() {
-  const [inputValue, setInputValue] = useState('');
-  const [origin, setOrigin] = useState('');
+  const emptyRecipe = {
+    recipeTitle: '',
+    origin: '',
+    bookTitle: '',
+    bookAuthor: '',
+    bookPage: '',
+    websiteName: '',
+    websiteUrl: '',
+    otherSource: '',
+    otherLocation: '',
+  };
+
+  const [recipe, setRecipe] = useState(emptyRecipe);
+
   const addRecipe = useStore(state => state.addRecipe);
 
   const hydrated = useHydration();
@@ -22,11 +34,10 @@ export default function RecipeForm() {
         <StyledForm
           onSubmit={event => {
             event.preventDefault();
-            const trimmedValue = inputValue.trim();
+            const trimmedValue = recipe.recipeTitle.trim();
             if (trimmedValue.length > 0) {
-              addRecipe(trimmedValue, origin);
-              setInputValue('');
-              setOrigin('');
+              addRecipe(recipe);
+              setRecipe(emptyRecipe);
             }
           }}
         >
@@ -35,10 +46,10 @@ export default function RecipeForm() {
             type="text"
             minLength={2}
             maxLength={100}
-            placeholder="Add recipe title"
-            value={inputValue}
+            placeholder="recipe title"
+            value={recipe.recipeTitle}
             onChange={event => {
-              setInputValue(event.target.value);
+              setRecipe({ ...recipe, recipeTitle: event.target.value });
             }}
           />
           <StyledRadioButtonGroup>
@@ -50,9 +61,9 @@ export default function RecipeForm() {
                 name="origin"
                 value="Book"
                 required
-                checked={origin === 'Book'}
+                checked={recipe.origin === 'Book'}
                 onChange={event => {
-                  setOrigin(event.target.value);
+                  setRecipe({ ...recipe, origin: event.target.value });
                 }}
               />
               <label htmlFor="Book">Book</label>
@@ -63,9 +74,9 @@ export default function RecipeForm() {
                 id="Website"
                 name="origin"
                 value="Website"
-                checked={origin === 'Website'}
+                checked={recipe.origin === 'Website'}
                 onChange={event => {
-                  setOrigin(event.target.value);
+                  setRecipe({ ...recipe, origin: event.target.value });
                 }}
               ></input>
               <label htmlFor="Website">Website</label>
@@ -76,14 +87,105 @@ export default function RecipeForm() {
                 id="Other"
                 name="origin"
                 value="Other"
-                checked={origin === 'Other'}
+                checked={recipe.origin === 'Other'}
                 onChange={event => {
-                  setOrigin(event.target.value);
+                  setRecipe({ ...recipe, origin: event.target.value });
                 }}
               ></input>
               <label htmlFor="Other">Other</label>
             </div>
           </StyledRadioButtonGroup>
+          {/* book entry */}
+          {recipe.origin === 'Book' && (
+            <>
+              <StyledInput
+                required
+                type="text"
+                minLength={2}
+                maxLength={100}
+                placeholder="book title"
+                value={recipe.bookTitle}
+                onChange={event => {
+                  setRecipe({ ...recipe, bookTitle: event.target.value });
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="text"
+                minLength={2}
+                maxLength={100}
+                placeholder="author"
+                value={recipe.bookAuthor}
+                onChange={event => {
+                  setRecipe({ ...recipe, bookAuthor: event.target.value });
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="number"
+                minLength={1}
+                maxLength={3}
+                placeholder="page"
+                value={recipe.bookPage}
+                onChange={event => {
+                  setRecipe({ ...recipe, bookPage: event.target.value });
+                }}
+              ></StyledInput>
+            </>
+          )}
+          {/* website */}
+          {recipe.origin === 'Website' && (
+            <>
+              <StyledInput
+                required
+                type="test"
+                minLength={1}
+                maxLength={100}
+                placeholder="website"
+                value={recipe.websiteName}
+                onChange={event => {
+                  setRecipe({ ...recipe, websiteName: event.target.value });
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="url"
+                minLength={1}
+                maxLength={100}
+                placeholder="url"
+                value={recipe.websiteUrl}
+                onChange={event => {
+                  setRecipe({ ...recipe, websiteUrl: event.target.value });
+                }}
+              ></StyledInput>
+            </>
+          )}
+          {/* other */}
+          {recipe.origin === 'Other' && (
+            <>
+              <StyledInput
+                type="text"
+                minLength={1}
+                maxLength={100}
+                placeholder="personal source"
+                value={recipe.otherSource}
+                onChange={event => {
+                  setRecipe({ ...recipe, otherSource: event.target.value });
+                }}
+              ></StyledInput>
+              <StyledInput
+                required
+                type="text"
+                minLength={1}
+                maxLength={100}
+                placeholder="location of recipe"
+                value={recipe.otherLocation}
+                onChange={event => {
+                  setRecipe({ ...recipe, otherLocation: event.target.value });
+                }}
+              ></StyledInput>
+            </>
+          )}
           <StyledButton type="submit">Save</StyledButton>
         </StyledForm>
       )}
