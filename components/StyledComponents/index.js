@@ -6,7 +6,7 @@ import StyledListEntry from './StyledListEntry';
 import StyledToastContainer from './StyledToastContainer';
 import StyledRadioButtonGroup from './StyledRadioButtonGroup';
 import StyledPageContainer from './StyledPageContainer';
-import StyledHeader from '../StyledHeader';
+import StyledHeader from './StyledHeader';
 
 export {
   StyledButton,
