@@ -2,6 +2,7 @@ import {
   StyledH2,
   StyledListEntry,
   StyledButton,
+  StyledA,
 } from '../components/StyledComponents';
 
 import Link from 'next/link';

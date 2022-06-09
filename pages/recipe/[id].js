@@ -1,4 +1,15 @@
+import {
+  StyledHeader,
+  StyledA,
+  StyledPageContainer,
+  StyledRecipeDetails,
+  StyledButton,
+} from '../../components/StyledComponents';
+import Link from 'next/link';
+import Arrowleft from '../../public/arrowleft.svg';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import ingredients from '../../public/ingredients.jpg';
 import useStore from '../../hooks/useStore';
 
 const RecipeDetailPage = () => {
@@ -8,16 +19,36 @@ const RecipeDetailPage = () => {
   const { id } = router.query;
 
   const recipe = recipeList.find(recipe => recipe.id === id);
-  console.log(recipe.origin);
 
   function origin() {
     switch (recipe.origin) {
       case 'Book':
-        return <div>buch</div>;
+        return (
+          <StyledRecipeDetails>
+            <Image src={ingredients} height={200} width={200} />
+            <p>Autor: {recipe.bookAuthor}</p>
+            <h3>Buch: {recipe.bookTitle}</h3>
+            <p>Seite {recipe.bookPage}</p>
+          </StyledRecipeDetails>
+        );
       case 'Website':
-        return <div>website</div>;
+        return (
+          <StyledRecipeDetails>
+            <Image src={ingredients} height={200} width={200} />
+            <p>Website: {recipe.websiteName}</p>
+            <Link passHref href="{recipe.websiteUrl}">
+              <StyledButton>Go to website</StyledButton>
+            </Link>
+          </StyledRecipeDetails>
+        );
       case 'Other':
-        return <div>other</div>;
+        return (
+          <StyledRecipeDetails>
+            <Image src={ingredients} />
+            <p>Quelle: {recipe.otherSource}</p>
+            <p>Aufbewahrungsort: {recipe.otherLocation}</p>
+          </StyledRecipeDetails>
+        );
 
       default:
         return null;
@@ -26,8 +57,19 @@ const RecipeDetailPage = () => {
 
   return (
     <div>
-      {origin()}
-      <p>recipe id: {id}</p>
+      <StyledPageContainer>
+        <StyledHeader>
+          <Link passHref href="/">
+            <StyledA>
+              <Arrowleft width="20px" height="20px" />
+              back
+            </StyledA>
+          </Link>
+          <h1>{recipe.recipeTitle}</h1>
+        </StyledHeader>
+
+        {origin()}
+      </StyledPageContainer>
     </div>
   );
 };

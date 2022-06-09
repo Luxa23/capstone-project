@@ -1,9 +1,9 @@
 import {
   StyledPageContainer,
   StyledHeader,
+  StyledA,
 } from '../components/StyledComponents';
 import RecipeForm from '../components/RecipeForm';
-import StyledA from '../components/StyledComponents/StyledA';
 import Link from 'next/link';
 import Arrowleft from '../public/arrowleft.svg';
 
