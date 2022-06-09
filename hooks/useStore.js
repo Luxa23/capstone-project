@@ -34,32 +34,14 @@ const useStore = create(
           },
         ],
 
-        addRecipe: (
-          recipeTitle,
-          origin,
-          bookTitle,
-          bookAuthor,
-          bookPage,
-          websiteName,
-          websiteUrl,
-          otherSource,
-          otherLocation
-        ) => {
+        addRecipe: recipe => {
           set(state => {
             state.toggleToast(toastTypes.ADD);
             return {
               recipeList: [
                 {
                   id: nanoid(),
-                  recipeTitle,
-                  origin,
-                  bookTitle,
-                  bookAuthor,
-                  bookPage,
-                  websiteName,
-                  websiteUrl,
-                  otherSource,
-                  otherLocation,
+                  ...recipe,
                 },
                 ...state.recipeList,
               ],

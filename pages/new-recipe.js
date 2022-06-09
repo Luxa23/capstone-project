@@ -1,5 +1,4 @@
 import {
-  StyledH1,
   StyledPageContainer,
   StyledHeader,
 } from '../components/StyledComponents';
@@ -18,7 +17,7 @@ export default function NewRecipe() {
             back
           </StyledA>
         </Link>
-        <StyledH1>Add new recipe</StyledH1>
+        <h1>Add new recipe</h1>
       </StyledHeader>
       <RecipeForm />
     </StyledPageContainer>

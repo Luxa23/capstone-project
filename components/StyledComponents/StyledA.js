@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const StyledA = styled.a`
-  _position: fixed;
   top: 15px;
   left: 15px;
   text-decoration: none;
