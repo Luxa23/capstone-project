@@ -8,7 +8,6 @@ import {
 import Link from 'next/link';
 import Arrowleft from '../../public/arrowleft.svg';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import ingredients from '../../public/ingredients.jpg';
 import useStore from '../../hooks/useStore';
 
@@ -18,14 +17,13 @@ const RecipeDetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const recipe = recipeList.find(recipe => recipe.id === id);
+  const recipe = recipeList.find(recipe => recipe.id === id) || {};
 
   function origin() {
     switch (recipe.origin) {
       case 'Book':
         return (
           <StyledRecipeDetails>
-            <Image src={ingredients} height={200} width={200} />
             <p>Autor: {recipe.bookAuthor}</p>
             <h3>Buch: {recipe.bookTitle}</h3>
             <p>Seite {recipe.bookPage}</p>
@@ -34,17 +32,15 @@ const RecipeDetailPage = () => {
       case 'Website':
         return (
           <StyledRecipeDetails>
-            <Image src={ingredients} height={200} width={200} />
             <p>Website: {recipe.websiteName}</p>
-            <Link passHref href="{recipe.websiteUrl}">
-              <StyledButton>Go to website</StyledButton>
+            <Link passHref href={recipe.websiteUrl}>
+              <StyledButton>Visit website</StyledButton>
             </Link>
           </StyledRecipeDetails>
         );
       case 'Other':
         return (
           <StyledRecipeDetails>
-            <Image src={ingredients} />
             <p>Quelle: {recipe.otherSource}</p>
             <p>Aufbewahrungsort: {recipe.otherLocation}</p>
           </StyledRecipeDetails>

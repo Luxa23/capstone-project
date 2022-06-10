@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
       grid-row-end: 3;
 
     }
+
    
 `;
 

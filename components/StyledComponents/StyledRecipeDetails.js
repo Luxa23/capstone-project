@@ -5,8 +5,11 @@ const StyledRecipeDetails = styled.div`
   font-size: 16;
   padding: 0 1.5rem;
   background: #fff5f6;
-  display: grid;
-  grid-template-rows: 12rem 3rem 3rem 3rem;
+
+  & button {
+    width: 17rem;
+    margin: 0 2rem;
+  }
 `;
 
 export default StyledRecipeDetails;

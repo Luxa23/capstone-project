@@ -1,8 +1,8 @@
 import {
+  StyledAText,
   StyledH2,
   StyledListEntry,
   StyledButton,
-  StyledA,
 } from '../components/StyledComponents';
 
 import Link from 'next/link';
@@ -20,9 +20,7 @@ export default function ListEntry({ children, id }) {
       {hydrated && (
         <StyledListEntry>
           <Link href={`/recipe/${id}`}>
-            <a>
-              <StyledH2>{children}</StyledH2>
-            </a>
+            <StyledAText>{children}</StyledAText>
           </Link>
           <StyledButton className="button--deleteicon">
             <Binicon
