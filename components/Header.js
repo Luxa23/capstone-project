@@ -1,4 +1,9 @@
-import { StyledHeader, StyledA, StyledButtonIcon } from './StyledComponents';
+import {
+  StyledHeader,
+  StyledA,
+  StyledButtonIcon,
+  StyledHeaderIcons,
+} from './StyledComponents';
 import Penicon from '../public/penicon.svg';
 import Arrowleft from '../public/arrowleft.svg';
 import Link from 'next/link';
@@ -11,17 +16,19 @@ export default function Header({ id }) {
 
   return (
     <StyledHeader>
-      <div>
+      <StyledHeaderIcons>
         <Link passHref href="/">
           <StyledA>
             <Arrowleft width="20px" height="20px" />
             back
           </StyledA>
         </Link>
-      </div>
-      <StyledButtonIcon>
-        <Penicon width="20px" height="20px" />
-      </StyledButtonIcon>
+        <Link passHref href="/new-recipe">
+          <StyledButtonIcon>
+            <Penicon width="20px" height="20px" />
+          </StyledButtonIcon>
+        </Link>
+      </StyledHeaderIcons>
       <h1>{recipe.recipeTitle}</h1>
     </StyledHeader>
   );
