@@ -8,7 +8,6 @@ import {
 import Link from 'next/link';
 import Arrowleft from '../../public/arrowleft.svg';
 import { useRouter } from 'next/router';
-import ingredients from '../../public/ingredients.jpg';
 import useStore from '../../hooks/useStore';
 
 const RecipeDetailPage = () => {
