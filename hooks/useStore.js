@@ -10,21 +10,7 @@ const useStore = create(
   persist(
     set => {
       return {
-        recipeList: [
-          {
-            id: nanoid(),
-            recipeTitle: 'Cheesecake',
-            origin: 'book',
-            bookTitle: 'SWEET: Süße Köstlichkeiten',
-            bookAuthor: 'Yotam Ottolenghi',
-            bookPage: '12',
-            websiteName: '',
-            websiteUrl: '',
-            otherSource: '',
-            otherLocation: '',
-          },
-          { id: nanoid(), recipeTitle: 'Carrotcake', origin: 'website' },
-        ],
+        recipeList: [],
         toasts: [
           {
             id: toastTypes.ADD,

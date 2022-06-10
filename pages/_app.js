@@ -28,7 +28,6 @@ const GlobalStyle = createGlobalStyle`
       grid-row-end: 3;
 
     }
-   
 `;
 
 export default function MyApp({ Component, ...pageProps }) {
