@@ -6,10 +6,6 @@ const StyledListEntry = styled.li`
   justify-content: space-between;
   align-items: center;
   padding-right: 25px;
-
-  a {
-    text-decoration: none;
-  }
 `;
 
 export default StyledListEntry;
