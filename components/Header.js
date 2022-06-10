@@ -6,6 +6,7 @@ import useStore from '../hooks/useStore';
 
 export default function Header({ id }) {
   const recipeList = useStore(state => state.recipeList);
+
   const recipe = recipeList.find(recipe => recipe.id === id) || {};
 
   return (

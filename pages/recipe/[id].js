@@ -53,7 +53,7 @@ const RecipeDetailPage = () => {
   return (
     <div>
       <StyledPageContainer>
-        <Header />
+        <Header id={recipe.id} key={recipe.id} />
         {origin()}
       </StyledPageContainer>
     </div>
