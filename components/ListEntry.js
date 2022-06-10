@@ -1,6 +1,5 @@
 import {
   StyledAText,
-  StyledH2,
   StyledListEntry,
   StyledButton,
 } from '../components/StyledComponents';

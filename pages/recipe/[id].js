@@ -4,11 +4,13 @@ import {
   StyledPageContainer,
   StyledRecipeDetails,
   StyledButton,
+  StyledButtonIcon,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
 import Arrowleft from '../../public/arrowleft.svg';
 import { useRouter } from 'next/router';
 import useStore from '../../hooks/useStore';
+import Penicon from '../../public/penicon.svg';
 
 const RecipeDetailPage = () => {
   const recipeList = useStore(state => state.recipeList);
@@ -54,12 +56,17 @@ const RecipeDetailPage = () => {
     <div>
       <StyledPageContainer>
         <StyledHeader>
-          <Link passHref href="/">
-            <StyledA>
-              <Arrowleft width="20px" height="20px" />
-              back
-            </StyledA>
-          </Link>
+          <div>
+            <Link passHref href="/">
+              <StyledA>
+                <Arrowleft width="20px" height="20px" />
+                back
+              </StyledA>
+            </Link>
+          </div>
+          <StyledButtonIcon>
+            <Penicon width="20px" height="20px" />
+          </StyledButtonIcon>
           <h1>{recipe.recipeTitle}</h1>
         </StyledHeader>
 
