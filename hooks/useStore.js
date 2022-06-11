@@ -43,6 +43,17 @@ const useStore = create(
             };
           });
         },
+
+        editRecipe: currentRecipe => {
+          set(state => {
+            return {
+              recipeList: state.recipeList.map(recipe =>
+                recipe.id === currentRecipe.id ? currentRecipe : recipe
+              ),
+            };
+          });
+        },
+
         toggleToast: toastId => {
           set(state => {
             return {

@@ -1,9 +1,10 @@
 import {
   StyledHeader,
   StyledA,
-  StyledButtonIcon,
   StyledHeaderIcons,
+  StyledButtonIcon,
 } from './StyledComponents';
+
 import Penicon from '../public/penicon.svg';
 import Arrowleft from '../public/arrowleft.svg';
 import Link from 'next/link';
@@ -23,7 +24,7 @@ export default function Header({ id }) {
             back
           </StyledA>
         </Link>
-        <Link passHref href="/new-recipe">
+        <Link passHref href="/edit-recipe/${recipe.id}">
           <StyledButtonIcon>
             <Penicon width="20px" height="20px" />
           </StyledButtonIcon>
