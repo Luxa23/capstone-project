@@ -3,9 +3,11 @@ import {
   StyledHeader,
   StyledA,
   StyledHeaderIcons,
+  StyledButtonIcon,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
 import Arrowleft from '../../public/arrowleft.svg';
+import Tickicon from '../../public/tickicon.svg';
 
 export default function EditRecipe() {
   return (
@@ -18,6 +20,11 @@ export default function EditRecipe() {
                 <Arrowleft width="20px" height="20px" />
                 back
               </StyledA>
+            </Link>
+            <Link passHref href="/">
+              <StyledButtonIcon>
+                <Tickicon width="20px" height="20px" />
+              </StyledButtonIcon>
             </Link>
           </StyledHeaderIcons>
           <h1>Edit recipe</h1>
