@@ -48,7 +48,9 @@ const useStore = create(
           set(state => {
             return {
               recipeList: state.recipeList.map(recipe =>
-                recipe.id === currentRecipe.id ? currentRecipe : recipe
+                recipe.id === currentRecipe.id
+                  ? { ...recipe, ...currentRecipe }
+                  : recipe
               ),
             };
           });

@@ -25,7 +25,7 @@ export default function Header({ id }) {
           </StyledA>
         </Link>
         <Link passHref href="/edit-recipe/${recipe.id}">
-          <StyledButtonIcon>
+          <StyledButtonIcon id={recipe.id} key={recipe.id}>
             <Penicon width="20px" height="20px" />
           </StyledButtonIcon>
         </Link>
