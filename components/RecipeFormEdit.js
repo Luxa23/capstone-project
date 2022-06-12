@@ -6,6 +6,7 @@ import {
 } from './StyledComponents';
 import useStore from '../hooks/useStore';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function RecipeFormEdit({ id }) {
   const currentRecipe = {
@@ -26,11 +27,15 @@ export default function RecipeFormEdit({ id }) {
   const editRecipe = useStore(state => state.editRecipe);
   const [recipeEdit, setRecipeEdit] = useState(recipe);
 
+  //const router = useRouter;
+  //const { push } = useRouter;
+
   return (
     <>
       <StyledForm
         onSubmit={event => {
           event.preventDefault();
+
           const trimmedValue = recipeEdit.recipeTitle.trim();
           if (trimmedValue.length > 0) {
             editRecipe(recipeEdit);
@@ -92,8 +97,8 @@ export default function RecipeFormEdit({ id }) {
             <label htmlFor="Other">Other</label>
           </div>
         </StyledRadioButtonGroup>
-        {/* book entry */}
-        {recipe.origin === 'Book' && (
+
+        {recipeEdit.origin === 'Book' && (
           <>
             <StyledInput
               required
@@ -133,7 +138,7 @@ export default function RecipeFormEdit({ id }) {
             ></StyledInput>
           </>
         )}
-        {recipe.origin === 'Website' && (
+        {recipeEdit.origin === 'Website' && (
           <>
             <StyledInput
               required
@@ -165,7 +170,7 @@ export default function RecipeFormEdit({ id }) {
             ></StyledInput>
           </>
         )}
-        {recipe.origin === 'Other' && (
+        {recipeEdit.origin === 'Other' && (
           <>
             <StyledInput
               type="text"
