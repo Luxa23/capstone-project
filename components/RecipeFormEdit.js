@@ -27,7 +27,6 @@ export default function RecipeFormEdit({ id }) {
   const editRecipe = useStore(state => state.editRecipe);
   const [recipeEdit, setRecipeEdit] = useState(recipe);
 
-  //const router = useRouter;
   const { push } = useRouter();
 
   return (
