@@ -28,7 +28,7 @@ export default function RecipeFormEdit({ id }) {
   const [recipeEdit, setRecipeEdit] = useState(recipe);
 
   //const router = useRouter;
-  //const { push } = useRouter;
+  const { push } = useRouter();
 
   return (
     <>
@@ -41,6 +41,7 @@ export default function RecipeFormEdit({ id }) {
             editRecipe(recipeEdit);
             setRecipeEdit(currentRecipe);
           }
+          push(`/recipe/${id}`);
         }}
       >
         <StyledInput
@@ -201,6 +202,7 @@ export default function RecipeFormEdit({ id }) {
             ></StyledInput>
           </>
         )}
+
         <StyledButton type="submit">Save changes</StyledButton>
       </StyledForm>
     </>
