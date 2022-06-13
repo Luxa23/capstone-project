@@ -4,7 +4,7 @@ import {
   StyledH1Home,
   StyledUl,
   StyledTextHome,
-  StyledInputSearch,
+  StyledSearch,
   StyledPageContainerHome,
 } from '../components/StyledComponents';
 
@@ -27,13 +27,15 @@ export default function Home() {
               <h1>my recipes</h1>
             </StyledH1Home>
 
-            <StyledInputSearch
-              type="text"
-              placeholder="Search..."
-              onChange={event => {
-                setSearchTerm(event.target.value);
-              }}
-            ></StyledInputSearch>
+            <StyledSearch>
+              <input
+                type="text"
+                placeholder="Search..."
+                onChange={event => {
+                  setSearchTerm(event.target.value);
+                }}
+              ></input>
+            </StyledSearch>
 
             {recipeList.length === 0 && (
               <StyledTextHome>
