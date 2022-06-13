@@ -41,27 +41,27 @@ export default function Home() {
                 with the plus-icon.
               </StyledTextHome>
             )}
-            {recipeList
-              .filter(val => {
-                if (searchTerm == '') {
-                  return val;
-                } else if (
-                  val.recipeTitle
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
-                ) {
-                  return val;
-                }
-              })
-              .map(recipe => {
-                return (
-                  <StyledUl>
+            <StyledUl>
+              {recipeList
+                .filter(val => {
+                  if (searchTerm == '') {
+                    return val;
+                  } else if (
+                    val.recipeTitle
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map(recipe => {
+                  return (
                     <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
                       {recipe.recipeTitle}
                     </ListEntry>
-                  </StyledUl>
-                );
-              })}
+                  );
+                })}
+            </StyledUl>
 
             <Link passHref href="/new-recipe">
               <StyledButton className="button--plusicon">
