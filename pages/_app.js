@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
     --secondary-color : #FEA3B4;
     --tertiary-color : #FECDD6;
     
-
     --font-family : "Inter", sans-serif;
 
     }

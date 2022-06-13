@@ -2,6 +2,7 @@ import StyledButton from './StyledButton';
 import StyledButtonIcon from './StyledButtonIcon';
 import StyledForm from './StyledForm';
 import StyledInput from './StyledInput';
+import StyledInputSearch from './StyledInputSearch';
 import StyledUl from './StyledUl';
 import StyledListEntry from './StyledListEntry';
 import StyledToastContainer from './StyledToastContainer';
@@ -20,6 +21,7 @@ export {
   StyledButtonIcon,
   StyledForm,
   StyledInput,
+  StyledInputSearch,
   StyledListEntry,
   StyledUl,
   StyledToastContainer,
