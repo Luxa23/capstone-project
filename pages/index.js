@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <StyledH1Home>my recipes</StyledH1Home>
       <StyledTextHome>
-        Welcome to my app "my recipes". Add your first recipe with the
+        Welcome to my app &quot;my recipes&quot;. Add your first recipe with the
         plus-icon.
       </StyledTextHome>
       <StyledUl>
