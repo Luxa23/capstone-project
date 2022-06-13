@@ -13,6 +13,7 @@ import StyledHeaderIcons from './StyledHeaderIcons';
 import StyledA from './StyledA';
 import StyledRecipeDetails from './StyledRecipeDetails';
 import StyledAText from './StyledAText';
+import StyledTextHome from './StyledTextHome';
 
 export {
   StyledButton,
@@ -30,4 +31,5 @@ export {
   StyledA,
   StyledRecipeDetails,
   StyledAText,
+  StyledTextHome,
 };

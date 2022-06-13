@@ -3,6 +3,7 @@ import {
   StyledButton,
   StyledH1Home,
   StyledUl,
+  StyledTextHome,
 } from '../components/StyledComponents';
 
 import Link from 'next/link';
@@ -14,6 +15,10 @@ export default function Home() {
   return (
     <>
       <StyledH1Home>my recipes</StyledH1Home>
+      <StyledTextHome>
+        Welcome to my app "my recipes". Add your first recipe with the
+        plus-icon.
+      </StyledTextHome>
       <StyledUl>
         {recipeList.map(recipe => {
           return (
