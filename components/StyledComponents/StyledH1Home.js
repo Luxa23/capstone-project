@@ -7,7 +7,6 @@ const StyledH1Home = styled.h1`
   color: white;
   padding: 1.5rem;
   margin: 0;
-  text-align: center;
 `;
 
 export default StyledH1Home;

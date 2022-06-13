@@ -8,6 +8,7 @@ import StyledListEntry from './StyledListEntry';
 import StyledToastContainer from './StyledToastContainer';
 import StyledRadioButtonGroup from './StyledRadioButtonGroup';
 import StyledPageContainer from './StyledPageContainer';
+import StyledPageContainerHome from './StyledPageContainerHome';
 import StyledHeader from './StyledHeader';
 import StyledH1Home from './StyledH1Home';
 import StyledHeaderIcons from './StyledHeaderIcons';
@@ -27,6 +28,7 @@ export {
   StyledToastContainer,
   StyledRadioButtonGroup,
   StyledPageContainer,
+  StyledPageContainerHome,
   StyledHeader,
   StyledH1Home,
   StyledHeaderIcons,
