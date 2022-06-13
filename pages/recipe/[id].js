@@ -1,12 +1,17 @@
 import {
-  StyledHeader,
-  StyledA,
   StyledPageContainer,
   StyledRecipeDetails,
   StyledButton,
+  StyledHeader,
+  StyledHeaderIcons,
+  StyledA,
+  StyledButtonIcon,
 } from '../../components/StyledComponents';
+import PenIcon from '../../public/penicon.svg';
+import ArrowLeft from '../../public/arrowleft.svg';
+
 import Link from 'next/link';
-import Arrowleft from '../../public/arrowleft.svg';
+
 import { useRouter } from 'next/router';
 import useStore from '../../hooks/useStore';
 
@@ -54,15 +59,23 @@ const RecipeDetailPage = () => {
     <div>
       <StyledPageContainer>
         <StyledHeader>
-          <Link passHref href="/">
-            <StyledA>
-              <Arrowleft width="20px" height="20px" />
-              back
-            </StyledA>
-          </Link>
+          <StyledHeaderIcons>
+            <>
+              <Link passHref href="/">
+                <StyledA>
+                  <ArrowLeft width="20px" height="20px" />
+                  back
+                </StyledA>
+              </Link>
+              <Link passHref href={`/edit-recipe/${recipe.id}`}>
+                <StyledButtonIcon id={recipe.id} key={recipe.id}>
+                  <PenIcon width="20px" height="20px" />
+                </StyledButtonIcon>
+              </Link>
+            </>
+          </StyledHeaderIcons>
           <h1>{recipe.recipeTitle}</h1>
         </StyledHeader>
-
         {origin()}
       </StyledPageContainer>
     </div>

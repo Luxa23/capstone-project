@@ -13,7 +13,7 @@ const StyledButton = styled.button`
   box-shadow: 0 0 30px var(--secondary-color);
 
   &.button--deleteicon {
-    background-color: white;
+    background-color: transparent;
     box-shadow: none;
   }
 
