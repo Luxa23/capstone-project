@@ -1,5 +1,9 @@
 import ListEntry from '../components/ListEntry';
-import { StyledButton, StyledH1Home } from '../components/StyledComponents';
+import {
+  StyledButton,
+  StyledH1Home,
+  StyledUl,
+} from '../components/StyledComponents';
 
 import Link from 'next/link';
 import useStore from '../hooks/useStore';
@@ -10,8 +14,7 @@ export default function Home() {
   return (
     <>
       <StyledH1Home>my recipes</StyledH1Home>
-
-      <ul>
+      <StyledUl>
         {recipeList.map(recipe => {
           return (
             <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
@@ -19,7 +22,7 @@ export default function Home() {
             </ListEntry>
           );
         })}
-      </ul>
+      </StyledUl>
       <Link passHref href="/new-recipe">
         <StyledButton className="button--plusicon">
           <PlusIcon width="75px" height="75px" />

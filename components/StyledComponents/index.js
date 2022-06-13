@@ -2,6 +2,7 @@ import StyledButton from './StyledButton';
 import StyledButtonIcon from './StyledButtonIcon';
 import StyledForm from './StyledForm';
 import StyledInput from './StyledInput';
+import StyledUl from './StyledUl';
 import StyledListEntry from './StyledListEntry';
 import StyledToastContainer from './StyledToastContainer';
 import StyledRadioButtonGroup from './StyledRadioButtonGroup';
@@ -19,6 +20,7 @@ export {
   StyledForm,
   StyledInput,
   StyledListEntry,
+  StyledUl,
   StyledToastContainer,
   StyledRadioButtonGroup,
   StyledPageContainer,
