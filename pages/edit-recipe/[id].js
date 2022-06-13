@@ -5,7 +5,7 @@ import {
   StyledHeaderIcons,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
-import Arrowleft from '../../public/arrowleft.svg';
+import ArrowLeft from '../../public/arrowleft.svg';
 import RecipeFormEdit from '../../components/RecipeFormEdit';
 import useStore from '../../hooks/useStore';
 import { useRouter } from 'next/router';
@@ -25,7 +25,7 @@ export default function EditRecipe() {
           <StyledHeaderIcons>
             <Link passHref href="/">
               <StyledA>
-                <Arrowleft width="20px" height="20px" />
+                <ArrowLeft width="20px" height="20px" />
                 back
               </StyledA>
             </Link>
