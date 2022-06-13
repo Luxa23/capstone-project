@@ -44,7 +44,7 @@ const useStore = create(
           });
         },
 
-        editRecipe: currentRecipe => {
+        updateRecipe: currentRecipe => {
           set(state => {
             return {
               recipeList: state.recipeList.map(recipe =>

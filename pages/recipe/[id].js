@@ -7,8 +7,8 @@ import {
   StyledA,
   StyledButtonIcon,
 } from '../../components/StyledComponents';
-import Penicon from '../../public/penicon.svg';
-import Arrowleft from '../../public/arrowleft.svg';
+import PenIcon from '../../public/penicon.svg';
+import ArrowLeft from '../../public/arrowleft.svg';
 
 import Link from 'next/link';
 
@@ -63,13 +63,13 @@ const RecipeDetailPage = () => {
             <>
               <Link passHref href="/">
                 <StyledA>
-                  <Arrowleft width="20px" height="20px" />
+                  <ArrowLeft width="20px" height="20px" />
                   back
                 </StyledA>
               </Link>
               <Link passHref href={`/edit-recipe/${recipe.id}`}>
                 <StyledButtonIcon id={recipe.id} key={recipe.id}>
-                  <Penicon width="20px" height="20px" />
+                  <PenIcon width="20px" height="20px" />
                 </StyledButtonIcon>
               </Link>
             </>

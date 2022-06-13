@@ -32,7 +32,7 @@ export default function EditRecipe() {
           </StyledHeaderIcons>
           <h1>Edit recipe</h1>
         </StyledHeader>
-        <RecipeFormEdit id={recipe.id} key={recipe.id} />
+        <RecipeFormEdit id={recipe.id} />
       </StyledPageContainer>
     </>
   );

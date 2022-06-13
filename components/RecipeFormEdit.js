@@ -9,22 +9,10 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function RecipeFormEdit({ id }) {
-  const currentRecipe = {
-    recipeTitle: '',
-    origin: '',
-    bookTitle: '',
-    bookAuthor: '',
-    bookPage: '',
-    websiteName: '',
-    websiteUrl: '',
-    otherSource: '',
-    otherLocation: '',
-  };
-
   const recipeList = useStore(state => state.recipeList);
   const recipe = recipeList.find(recipe => recipe.id === id) || {};
 
-  const editRecipe = useStore(state => state.editRecipe);
+  const updateRecipe = useStore(state => state.updateRecipe);
   const [recipeEdit, setRecipeEdit] = useState(recipe);
 
   const { push } = useRouter();
@@ -37,8 +25,8 @@ export default function RecipeFormEdit({ id }) {
 
           const trimmedValue = recipeEdit.recipeTitle.trim();
           if (trimmedValue.length > 0) {
-            editRecipe(recipeEdit);
-            setRecipeEdit(currentRecipe);
+            updateRecipe(recipeEdit);
+            setRecipeEdit('');
           }
           push(`/recipe/${id}`);
         }}
