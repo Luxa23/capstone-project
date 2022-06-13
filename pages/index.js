@@ -23,7 +23,9 @@ export default function Home() {
       {hydrated && (
         <>
           <StyledPageContainerHome>
-            <StyledH1Home>my recipes</StyledH1Home>
+            <StyledH1Home>
+              <h1>my recipes</h1>
+            </StyledH1Home>
 
             <StyledInputSearch
               type="text"
