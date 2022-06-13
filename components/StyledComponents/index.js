@@ -7,6 +7,7 @@ import StyledToastContainer from './StyledToastContainer';
 import StyledRadioButtonGroup from './StyledRadioButtonGroup';
 import StyledPageContainer from './StyledPageContainer';
 import StyledHeader from './StyledHeader';
+import StyledH1Home from './StyledH1Home';
 import StyledHeaderIcons from './StyledHeaderIcons';
 import StyledA from './StyledA';
 import StyledRecipeDetails from './StyledRecipeDetails';
@@ -22,6 +23,7 @@ export {
   StyledRadioButtonGroup,
   StyledPageContainer,
   StyledHeader,
+  StyledH1Home,
   StyledHeaderIcons,
   StyledA,
   StyledRecipeDetails,
