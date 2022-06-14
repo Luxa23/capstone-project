@@ -32,16 +32,18 @@ export default function Home() {
 
   useEffect(() => {
     if (recipeList.length === 0 && searchTerm === '') {
-      setMessage(
+      return setMessage(
         'Welcome to my app my recipes. Add your first recipe with the plus-icon.'
       );
     }
+
     if (searchTerm !== '' && foundRecipes.length === 0) {
-      setMessage(
+      return setMessage(
         'Es wurden leider keine Einträge gefunden. Es werden alle Einträge angezeigt.'
       );
     }
-  });
+    setMessage('');
+  }, [searchTerm, recipeList, foundRecipes]);
 
   return (
     <>
