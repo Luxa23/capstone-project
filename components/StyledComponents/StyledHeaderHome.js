@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledH1Home = styled.div`
+const StyledHeaderHome = styled.div`
   background: linear-gradient(355.31deg, #cdfbfe -25.03%, #fd6f8e 89.24%);
 
   & h1 {
@@ -13,4 +13,4 @@ const StyledH1Home = styled.div`
   }
 `;
 
-export default StyledH1Home;
+export default StyledHeaderHome;

@@ -10,7 +10,7 @@ import StyledRadioButtonGroup from './StyledRadioButtonGroup';
 import StyledPageContainer from './StyledPageContainer';
 import StyledPageContainerHome from './StyledPageContainerHome';
 import StyledHeader from './StyledHeader';
-import StyledH1Home from './StyledH1Home';
+import StyledHeaderHome from './StyledHeaderHome';
 import StyledHeaderIcons from './StyledHeaderIcons';
 import StyledA from './StyledA';
 import StyledRecipeDetails from './StyledRecipeDetails';
@@ -30,7 +30,7 @@ export {
   StyledPageContainer,
   StyledPageContainerHome,
   StyledHeader,
-  StyledH1Home,
+  StyledHeaderHome,
   StyledHeaderIcons,
   StyledA,
   StyledRecipeDetails,

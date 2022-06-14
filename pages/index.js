@@ -1,7 +1,6 @@
 import ListEntry from '../components/ListEntry';
 import {
   StyledButton,
-  StyledH1Home,
   StyledUl,
   StyledTextHome,
   StyledSearch,
@@ -13,6 +12,7 @@ import Link from 'next/link';
 import useHydration from '../hooks/useHydration';
 import useStore from '../hooks/useStore';
 import PlusIcon from '../public/plusicon.svg';
+import HeaderHome from '../components/HeaderHome';
 
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
@@ -23,9 +23,7 @@ export default function Home() {
       {hydrated && (
         <>
           <StyledPageContainerHome>
-            <StyledH1Home>
-              <h1>my recipes</h1>
-            </StyledH1Home>
+            <HeaderHome />
 
             <StyledSearch>
               <input
