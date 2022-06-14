@@ -16,34 +16,23 @@ import HeaderHome from '../components/HeaderHome';
 
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [message, setMessage] = useState('');
+  const [recipesToShow, setRecipesToShow] = useState([]);
   const hydrated = useHydration();
-
-  const foundRecipes = recipeList.filter(recipe => {
-    if (searchTerm === '') {
-      return null;
-    } else if (
-      recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
-    ) {
-      return recipe;
-    }
-  });
+  const hasRecipes = recipeList.length > 0;
+  const hasFound = recipesToShow.length > 0;
 
   useEffect(() => {
-    if (recipeList.length === 0 && searchTerm === '') {
-      return setMessage(
-        'Welcome to my app my recipes. Add your first recipe with the plus-icon.'
-      );
-    }
+    setRecipesToShow(recipeList);
+  }, [recipeList]);
 
-    if (searchTerm !== '' && foundRecipes.length === 0) {
-      return setMessage(
-        'Es wurden leider keine Einträge gefunden. Es werden alle Einträge angezeigt.'
-      );
-    }
-    setMessage('');
-  }, [searchTerm, recipeList, foundRecipes]);
+  function handleSearch(event) {
+    const searchTerm = event.target.value;
+    setRecipesToShow(
+      recipeList.filter(recipe =>
+        recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  }
 
   return (
     <>
@@ -55,29 +44,23 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="Search..."
-                onChange={event => {
-                  setSearchTerm(event.target.value);
-                }}
+                onChange={handleSearch}
               ></input>
             </StyledSearch>
-            {message === '' ? null : <StyledTextHome>{message}</StyledTextHome>}
+
+            {!hasFound && hasRecipes && (
+              <StyledTextHome>Nichts gefunden</StyledTextHome>
+            )}
+            {!hasRecipes && <StyledTextHome>Willkommen</StyledTextHome>}
 
             <StyledUl>
-              {foundRecipes.length > 0
-                ? foundRecipes?.map(recipe => {
-                    return (
-                      <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
-                        {recipe.recipeTitle}
-                      </ListEntry>
-                    );
-                  })
-                : recipeList.map(recipe => {
-                    return (
-                      <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
-                        {recipe.recipeTitle}
-                      </ListEntry>
-                    );
-                  })}
+              {recipesToShow.map(recipe => {
+                return (
+                  <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                    {recipe.recipeTitle}
+                  </ListEntry>
+                );
+              })}
             </StyledUl>
 
             <Link passHref href="/new-recipe">
