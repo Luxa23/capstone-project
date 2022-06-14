@@ -7,6 +7,7 @@ const StyledTextHome = styled.p`
   border-radius: 10px;
   margin: 2rem;
   padding: 1rem;
+  height: 5rem;
 `;
 
 export default StyledTextHome;
