@@ -49,9 +49,16 @@ export default function Home() {
             </StyledSearch>
 
             {!hasFound && hasRecipes && (
-              <StyledTextHome>Nichts gefunden</StyledTextHome>
+              <StyledTextHome>
+                Es wurden keine Einträge gefunden.
+              </StyledTextHome>
             )}
-            {!hasRecipes && <StyledTextHome>Willkommen</StyledTextHome>}
+            {!hasRecipes && (
+              <StyledTextHome>
+                Willkommen zu "my recipes". Füge dein erstes Rezept mit dem Plus
+                hinzu.
+              </StyledTextHome>
+            )}
 
             <StyledUl>
               {recipesToShow.map(recipe => {
