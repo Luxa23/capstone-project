@@ -18,6 +18,17 @@ export default function Home() {
   const recipeList = useStore(state => state.recipeList);
   const [searchTerm, setSearchTerm] = useState('');
   const hydrated = useHydration();
+
+  const foundRecipes = recipeList.filter(recipe => {
+    if (searchTerm == '') {
+      return recipe;
+    } else if (
+      recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
+    ) {
+      return recipe;
+    }
+  });
+
   return (
     <>
       {hydrated && (
@@ -41,26 +52,15 @@ export default function Home() {
                 with the plus-icon.
               </StyledTextHome>
             )}
+
             <StyledUl>
-              {recipeList
-                .filter(val => {
-                  if (searchTerm == '') {
-                    return val;
-                  } else if (
-                    val.recipeTitle
-                      .toLowerCase()
-                      .includes(searchTerm.toLowerCase())
-                  ) {
-                    return val;
-                  }
-                })
-                .map(recipe => {
-                  return (
-                    <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
-                      {recipe.recipeTitle}
-                    </ListEntry>
-                  );
-                })}
+              {foundRecipes?.map(recipe => {
+                return (
+                  <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                    {recipe.recipeTitle}
+                  </ListEntry>
+                );
+              })}
             </StyledUl>
 
             <Link passHref href="/new-recipe">
