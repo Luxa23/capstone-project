@@ -7,7 +7,7 @@ import {
   StyledPageContainerHome,
 } from '../components/StyledComponents';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import useHydration from '../hooks/useHydration';
 import useStore from '../hooks/useStore';
@@ -17,15 +17,29 @@ import HeaderHome from '../components/HeaderHome';
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
   const [searchTerm, setSearchTerm] = useState('');
+  const [message, setMessage] = useState('');
   const hydrated = useHydration();
 
   const foundRecipes = recipeList.filter(recipe => {
-    if (searchTerm == '') {
-      return recipe;
+    if (searchTerm === '') {
+      return null;
     } else if (
       recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
     ) {
       return recipe;
+    }
+  });
+
+  useEffect(() => {
+    if (recipeList.length === 0 && searchTerm === '') {
+      setMessage(
+        'Welcome to my app my recipes. Add your first recipe with the plus-icon.'
+      );
+    }
+    if (searchTerm !== '' && foundRecipes.length === 0) {
+      setMessage(
+        'Es wurden leider keine Einträge gefunden. Es werden alle Einträge angezeigt.'
+      );
     }
   });
 
@@ -44,36 +58,25 @@ export default function Home() {
                 }}
               ></input>
             </StyledSearch>
-            {recipeList.length === 0 && (
-              <StyledTextHome>
-                Welcome to my app &quot;my recipes&quot;. Add your first recipe
-                with the plus-icon.
-              </StyledTextHome>
-            )}
+            {message === '' ? null : <StyledTextHome>{message}</StyledTextHome>}
 
-            {foundRecipes.length === 0 && (
-              <StyledTextHome>
-                Es konnten leider keine Einträge gefunden werden.
-              </StyledTextHome>
-            )}
-
-            {foundRecipes.length === '' && (
-              <StyledTextHome>
-                Es konnten leider keine Einträge gefunden werden.
-              </StyledTextHome>
-            )}
-
-            {foundRecipes.length > 0 && (
-              <StyledUl>
-                {foundRecipes?.map(recipe => {
-                  return (
-                    <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
-                      {recipe.recipeTitle}
-                    </ListEntry>
-                  );
-                })}
-              </StyledUl>
-            )}
+            <StyledUl>
+              {foundRecipes.length > 0
+                ? foundRecipes?.map(recipe => {
+                    return (
+                      <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                        {recipe.recipeTitle}
+                      </ListEntry>
+                    );
+                  })
+                : recipeList.map(recipe => {
+                    return (
+                      <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                        {recipe.recipeTitle}
+                      </ListEntry>
+                    );
+                  })}
+            </StyledUl>
 
             <Link passHref href="/new-recipe">
               <StyledButton className="button--plusicon">

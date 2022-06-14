@@ -6,7 +6,6 @@ import {
 } from '../components/StyledComponents';
 import { useState } from 'react';
 import useStore from '../hooks/useStore';
-import { useRouter } from 'next/router';
 import useHydration from '../hooks/useHydration';
 import Toast from './Toast';
 
@@ -28,7 +27,6 @@ export default function RecipeForm({ id }) {
   const addRecipe = useStore(state => state.addRecipe);
 
   const hydrated = useHydration();
-  const { push } = useRouter();
 
   return (
     <>
@@ -41,7 +39,6 @@ export default function RecipeForm({ id }) {
               addRecipe(recipe);
               setRecipe(emptyRecipe);
             }
-            push(`/recipe/${id}`);
           }}
         >
           <StyledInput
