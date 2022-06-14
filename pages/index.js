@@ -35,7 +35,6 @@ export default function Home() {
         <>
           <StyledPageContainerHome>
             <HeaderHome />
-
             <StyledSearch>
               <input
                 type="text"
@@ -45,7 +44,6 @@ export default function Home() {
                 }}
               ></input>
             </StyledSearch>
-
             {recipeList.length === 0 && (
               <StyledTextHome>
                 Welcome to my app &quot;my recipes&quot;. Add your first recipe
@@ -53,15 +51,29 @@ export default function Home() {
               </StyledTextHome>
             )}
 
-            <StyledUl>
-              {foundRecipes?.map(recipe => {
-                return (
-                  <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
-                    {recipe.recipeTitle}
-                  </ListEntry>
-                );
-              })}
-            </StyledUl>
+            {foundRecipes.length === 0 && (
+              <StyledTextHome>
+                Es konnten leider keine Einträge gefunden werden.
+              </StyledTextHome>
+            )}
+
+            {foundRecipes.length === '' && (
+              <StyledTextHome>
+                Es konnten leider keine Einträge gefunden werden.
+              </StyledTextHome>
+            )}
+
+            {foundRecipes.length > 0 && (
+              <StyledUl>
+                {foundRecipes?.map(recipe => {
+                  return (
+                    <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                      {recipe.recipeTitle}
+                    </ListEntry>
+                  );
+                })}
+              </StyledUl>
+            )}
 
             <Link passHref href="/new-recipe">
               <StyledButton className="button--plusicon">
