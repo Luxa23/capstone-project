@@ -55,8 +55,8 @@ export default function Home() {
             )}
             {!hasRecipes && (
               <StyledTextHome>
-                Willkommen zu "my recipes". Füge dein erstes Rezept mit dem Plus
-                hinzu.
+                Willkommen zu &quot;my recipes&quot;. Füge dein erstes Rezept
+                mit dem Plus hinzu.
               </StyledTextHome>
             )}
 
