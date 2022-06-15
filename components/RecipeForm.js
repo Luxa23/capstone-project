@@ -9,7 +9,7 @@ import useStore from '../hooks/useStore';
 import useHydration from '../hooks/useHydration';
 import Toast from './Toast';
 
-export default function RecipeForm() {
+export default function RecipeForm({ id }) {
   const emptyRecipe = {
     recipeTitle: '',
     origin: '',

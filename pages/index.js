@@ -1,44 +1,83 @@
 import ListEntry from '../components/ListEntry';
 import {
   StyledButton,
-  StyledH1Home,
   StyledUl,
   StyledTextHome,
+  StyledSearch,
+  StyledPageContainerHome,
 } from '../components/StyledComponents';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import useHydration from '../hooks/useHydration';
 import useStore from '../hooks/useStore';
 import PlusIcon from '../public/plusicon.svg';
+import HeaderHome from '../components/HeaderHome';
 
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
+  const [recipesToShow, setRecipesToShow] = useState([]);
+  const hydrated = useHydration();
+  const hasRecipes = recipeList.length > 0;
+  const hasFound = recipesToShow.length > 0;
+
+  useEffect(() => {
+    setRecipesToShow(recipeList);
+  }, [recipeList]);
+
+  function handleSearch(event) {
+    const searchTerm = event.target.value;
+    setRecipesToShow(
+      recipeList.filter(recipe =>
+        recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    );
+  }
 
   return (
     <>
-      <StyledH1Home>my recipes</StyledH1Home>
-      {recipeList.length === 0 && (
-        <StyledTextHome>
-          Welcome to my app &quot;my recipes&quot;. Add your first recipe with
-          the plus-icon.
-        </StyledTextHome>
-      )}
-      {recipeList.length > 0 && (
-        <StyledUl>
-          {recipeList.map(recipe => {
-            return (
-              <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
-                {recipe.recipeTitle}
-              </ListEntry>
-            );
-          })}
-        </StyledUl>
-      )}
+      {hydrated && (
+        <>
+          <StyledPageContainerHome>
+            <HeaderHome />
+            <StyledSearch>
+              <input
+                type="text"
+                placeholder="Search..."
+                onChange={handleSearch}
+              ></input>
+            </StyledSearch>
 
-      <Link passHref href="/new-recipe">
-        <StyledButton className="button--plusicon">
-          <PlusIcon width="75px" height="75px" />
-        </StyledButton>
-      </Link>
+            {!hasFound && hasRecipes && (
+              <StyledTextHome>
+                Es wurden keine Einträge gefunden.
+              </StyledTextHome>
+            )}
+            {!hasRecipes && (
+              <StyledTextHome>
+                Willkommen zu &quot;my recipes&quot;. Füge dein erstes Rezept
+                mit dem Plus hinzu.
+              </StyledTextHome>
+            )}
+
+            <StyledUl>
+              {recipesToShow.map(recipe => {
+                return (
+                  <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                    {recipe.recipeTitle}
+                  </ListEntry>
+                );
+              })}
+            </StyledUl>
+
+            <Link passHref href="/new-recipe">
+              <StyledButton className="button--plusicon">
+                <PlusIcon width="75px" height="75px" />
+              </StyledButton>
+            </Link>
+          </StyledPageContainerHome>
+        </>
+      )}
     </>
   );
 }
