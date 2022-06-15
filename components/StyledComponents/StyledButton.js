@@ -12,11 +12,6 @@ const StyledButton = styled.button`
   padding: 0.75rem;
   box-shadow: 0 0 30px var(--secondary-color);
 
-  &.button--deleteicon {
-    background-color: transparent;
-    box-shadow: none;
-  }
-
   &.button--plusicon {
     background-color: transparent;
     box-shadow: none;
