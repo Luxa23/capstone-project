@@ -8,6 +8,8 @@ import { useState } from 'react';
 import useStore from '../hooks/useStore';
 import useHydration from '../hooks/useHydration';
 import Toast from './Toast';
+import { useRouter } from 'next/router';
+import { nanoid } from 'nanoid';
 
 export default function RecipeForm({ id }) {
   const emptyRecipe = {
@@ -21,12 +23,14 @@ export default function RecipeForm({ id }) {
     otherSource: '',
     otherLocation: '',
     isLiked: false,
+    id: nanoid(),
   };
 
   const [recipe, setRecipe] = useState(emptyRecipe);
 
   const addRecipe = useStore(state => state.addRecipe);
 
+  const { push } = useRouter();
   const hydrated = useHydration();
 
   return (
@@ -40,6 +44,8 @@ export default function RecipeForm({ id }) {
               addRecipe(recipe);
               setRecipe(emptyRecipe);
             }
+
+            push(`/recipe/${recipe.id}`);
           }}
         >
           <StyledInput
