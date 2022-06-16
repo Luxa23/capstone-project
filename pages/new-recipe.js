@@ -6,6 +6,7 @@ import {
 import RecipeForm from '../components/RecipeForm';
 import Link from 'next/link';
 import Arrowleft from '../public/arrowleft.svg';
+import Navigation from '../components/Navigation';
 
 export default function NewRecipe() {
   return (
@@ -20,6 +21,7 @@ export default function NewRecipe() {
         <h1>Add new recipe</h1>
       </StyledHeader>
       <RecipeForm />
+      <Navigation />
     </StyledPageContainer>
   );
 }

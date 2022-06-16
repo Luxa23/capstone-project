@@ -41,6 +41,7 @@ export default function Home() {
         <>
           <StyledPageContainerHome>
             <HeaderHome />
+
             <StyledSearch>
               <input
                 type="text"

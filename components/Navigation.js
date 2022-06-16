@@ -11,17 +11,17 @@ export default function Navigation() {
       <StyledNavigation>
         <button>
           <Link passHref href="/">
-            <HomeIcon width="40px" height="40px" />
+            <HomeIcon width="50px" height="50px" />
           </Link>
         </button>
         <button>
           <Link passHref href="/new-recipe">
-            <PlusIcon width="40px" height="40px" />
+            <PlusIcon width="50px" height="50px" />
           </Link>
         </button>
         <button>
           <Link passHref href="/favorite-recipes">
-            <StarIcon width="40px" height="40px" />
+            <StarIcon width="50px" height="50px" />
           </Link>
         </button>
       </StyledNavigation>
