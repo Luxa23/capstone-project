@@ -10,11 +10,5 @@ const StyledNavigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
-  button {
-    color: var(--primary-color);
-    background-color: transparent;
-    border: none;
-  }
 `;
 export default StyledNavigation;
