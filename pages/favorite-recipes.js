@@ -9,6 +9,7 @@ import Link from 'next/link';
 import ArrowLeft from '../public/arrowleft.svg';
 import ListEntry from '../components/ListEntry';
 import useStore from '../hooks/useStore';
+import Navigation from '../components/Navigation';
 
 export default function FavoriteRecipes() {
   const likedRecipeList = useStore(state =>
@@ -43,6 +44,7 @@ export default function FavoriteRecipes() {
           );
         })}
       </StyledUl>
+      <Navigation />
     </StyledPageContainer>
   );
 }

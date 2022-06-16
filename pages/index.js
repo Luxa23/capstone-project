@@ -13,6 +13,7 @@ import useHydration from '../hooks/useHydration';
 import useStore from '../hooks/useStore';
 import PlusIcon from '../public/plusicon.svg';
 import HeaderHome from '../components/HeaderHome';
+import Navigation from '../components/Navigation';
 
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
@@ -40,6 +41,7 @@ export default function Home() {
         <>
           <StyledPageContainerHome>
             <HeaderHome />
+
             <StyledSearch>
               <input
                 type="text"
@@ -75,11 +77,7 @@ export default function Home() {
               })}
             </StyledUl>
 
-            <Link passHref href="/new-recipe">
-              <StyledButton className="button--plusicon">
-                <PlusIcon width="75px" height="75px" />
-              </StyledButton>
-            </Link>
+            <Navigation />
           </StyledPageContainerHome>
         </>
       )}

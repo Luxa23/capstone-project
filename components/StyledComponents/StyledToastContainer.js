@@ -10,7 +10,7 @@ const StyledToastContainer = styled.div`
   position: fixed;
   right: 10px;
   left: 10px;
-  top: 10px;
+  bottom: 10rem;
   padding: 0 1rem;
   box-shadow: 0 0 30px var(--secondary-color);
 `;

@@ -5,8 +5,10 @@ const StyledForm = styled.form`
   display: grid;
   grid-template-rows: 3rem 8rem 3rem 3rem 3rem 1fr;
   justify-items: center;
-  row-gap: 1rem;
+  row-gap: 0.75rem;
   padding: 1rem;
+  grid-area: main;
+  overflow: auto;
 
   & button,
   & input {

@@ -7,5 +7,18 @@ const StyledA = styled.a`
   font-family: var(--font-family);
   color: #666666;
   display: flex;
+
+  &.link--active {
+    color: #fea3b4;
+    background-color: transparent;
+    border: none;
+    ${({ isActive }) =>
+      isActive &&
+      `       
+        color: #89123E;
+        background-color: transparent;
+    border: none;
+    `};
+  }
 `;
 export default StyledA;

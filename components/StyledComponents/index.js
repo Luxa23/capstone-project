@@ -16,6 +16,7 @@ import StyledA from './StyledA';
 import StyledRecipeDetails from './StyledRecipeDetails';
 import StyledAText from './StyledAText';
 import StyledTextHome from './StyledTextHome';
+import StyledNavigation from './StyledNavigation';
 
 export {
   StyledButton,
@@ -36,4 +37,5 @@ export {
   StyledRecipeDetails,
   StyledAText,
   StyledTextHome,
+  StyledNavigation,
 };
