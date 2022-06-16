@@ -9,8 +9,7 @@ import Link from 'next/link';
 import useStore from '../hooks/useStore';
 import useHydration from '../hooks/useHydration';
 import BinIcon from '../public/binicon.svg';
-import StarIcon from '../public/staricon.svg';
-import { useState } from 'react';
+import StarIcon from '../public/starIcon.svg';
 
 export default function ListEntry({ children, id, isActive }) {
   const hydrated = useHydration();
