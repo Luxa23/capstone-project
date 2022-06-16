@@ -2,7 +2,7 @@ import { StyledNavigation } from './StyledComponents';
 
 import Link from 'next/link';
 import HomeIcon from '../public/homeicon.svg';
-import StarIcon from '../public/staricon.svg';
+import StarIcon from '../public/starIcon.svg';
 import PlusIcon from '../public/plusicon.svg';
 
 export default function Navigation() {
