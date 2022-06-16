@@ -56,6 +56,21 @@ const useStore = create(
           });
         },
 
+        toggleIsLiked: id => {
+          set(state => {
+            return {
+              recipeList: state.recipeList.map(recipe =>
+                recipe.id === id
+                  ? {
+                      ...recipe,
+                      isLiked: !recipe.isLiked,
+                    }
+                  : recipe
+              ),
+            };
+          });
+        },
+
         toggleToast: toastId => {
           set(state => {
             return {

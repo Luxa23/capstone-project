@@ -12,8 +12,18 @@ const StyledButtonIcon = styled.button`
   }
 
   &.button--starIcon {
-    color: #eee3e8;
-    padding: 0 0 0 1rem;
+    ${({ isActive }) => {
+      if (isActive) {
+        return `       
+        color: #ffd700;
+        padding: 0 0 0 1rem;
+    `;
+      } else {
+        return `
+        color: #eee3e8;
+        padding: 0 0 0 1rem;`;
+      }
+    }}
   }
 `;
 export default StyledButtonIcon;

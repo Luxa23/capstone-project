@@ -63,7 +63,12 @@ export default function Home() {
             <StyledUl>
               {recipesToShow.map(recipe => {
                 return (
-                  <ListEntry id={recipe.id} key={recipe.id} recipe={recipe}>
+                  <ListEntry
+                    id={recipe.id}
+                    key={recipe.id}
+                    recipe={recipe}
+                    isActive={recipe.isLiked}
+                  >
                     {recipe.recipeTitle}
                   </ListEntry>
                 );
