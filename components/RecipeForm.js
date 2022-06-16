@@ -20,6 +20,7 @@ export default function RecipeForm({ id }) {
     websiteUrl: '',
     otherSource: '',
     otherLocation: '',
+    isLiked: false,
   };
 
   const [recipe, setRecipe] = useState(emptyRecipe);

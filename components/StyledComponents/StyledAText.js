@@ -6,9 +6,6 @@ const StyledAText = styled.a`
   font-weight: 700;
   padding: 1.5rem;
   text-decoration: none;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 `;
 
 export default StyledAText;
