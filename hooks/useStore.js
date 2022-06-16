@@ -1,5 +1,4 @@
 import create from 'zustand';
-import { nanoid } from 'nanoid';
 import { persist } from 'zustand/middleware';
 
 const toastTypes = {
@@ -26,7 +25,6 @@ const useStore = create(
             return {
               recipeList: [
                 {
-                  id: nanoid(),
                   ...recipe,
                 },
                 ...state.recipeList,
