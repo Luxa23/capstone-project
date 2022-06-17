@@ -197,7 +197,6 @@ export default function RecipeForm({ id }) {
                 }}
               ></StyledInput>
               <StyledTextarea
-                rows="5"
                 placeholder="Zutaten"
                 onChange={event => {
                   setRecipe({
@@ -208,7 +207,6 @@ export default function RecipeForm({ id }) {
               ></StyledTextarea>
 
               <StyledTextarea
-                rows="5"
                 placeholder="Zubereitung"
                 onChange={event => {
                   setRecipe({
