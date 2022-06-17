@@ -3,6 +3,7 @@ import {
   StyledButton,
   StyledInput,
   StyledRadioButtonGroup,
+  StyledTextarea,
 } from '../components/StyledComponents';
 import { useState } from 'react';
 import useStore from '../hooks/useStore';
@@ -49,6 +50,8 @@ export default function RecipeForm({ id }) {
 
             push(`/recipe/${recipe.id}`);
           }}
+          isActive={recipe.origin === 'Other'}
+          className="form--other-active"
         >
           <StyledInput
             required
@@ -193,7 +196,7 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, otherLocation: event.target.value });
                 }}
               ></StyledInput>
-              <textarea
+              <StyledTextarea
                 rows="5"
                 placeholder="Zutaten"
                 onChange={event => {
@@ -202,9 +205,9 @@ export default function RecipeForm({ id }) {
                     otherIngredients: event.target.value,
                   });
                 }}
-              ></textarea>
+              ></StyledTextarea>
 
-              <textarea
+              <StyledTextarea
                 rows="5"
                 placeholder="Zubereitung"
                 onChange={event => {
@@ -213,10 +216,12 @@ export default function RecipeForm({ id }) {
                     otherInstructions: event.target.value,
                   });
                 }}
-              ></textarea>
+              ></StyledTextarea>
             </>
           )}
-          <StyledButton type="submit">Save</StyledButton>
+          <StyledButton type="submit" className="button--other-active">
+            Save
+          </StyledButton>
         </StyledForm>
       )}
       <Toast />
