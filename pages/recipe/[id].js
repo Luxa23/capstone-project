@@ -7,11 +7,12 @@ import {
   StyledA,
   StyledButtonIcon,
 } from '../../components/StyledComponents';
+import Link from 'next/link';
+import Image from 'next/image';
 import PenIcon from '../../public/penicon.svg';
 import ArrowLeft from '../../public/arrowleft.svg';
-
-import Link from 'next/link';
-
+import bakingPic from '../../public/baking-recipe-muffins-medium.jpg';
+import cookingPic from '../../public/cooking-recipe-ingredients-medium.jpg';
 import { useRouter } from 'next/router';
 import useStore from '../../hooks/useStore';
 
@@ -28,8 +29,12 @@ const RecipeDetailPage = () => {
       case 'Book':
         return (
           <StyledRecipeDetails>
-            {recipe.processing === 'Cooking' && <p>Kochrezept</p>}
-            {recipe.processing === 'Baking' && <p>Backrezept</p>}
+            {recipe.processing === 'Cooking' && (
+              <Image src={cookingPic} alt="Cooking ingredients" />
+            )}
+            {recipe.processing === 'Baking' && (
+              <Image src={bakingPic} alt="Baking-muffins" />
+            )}
             <p>Autor: {recipe.bookAuthor}</p>
             <h3>Buch: {recipe.bookTitle}</h3>
             <p>Seite {recipe.bookPage}</p>
@@ -38,8 +43,12 @@ const RecipeDetailPage = () => {
       case 'Website':
         return (
           <StyledRecipeDetails>
-            {recipe.processing === 'Cooking' && <p>Kochrezept</p>}
-            {recipe.processing === 'Baking' && <p>Backrezept</p>}
+            {recipe.processing === 'Cooking' && (
+              <Image src={cookingPic} alt="Cooking ingredients" />
+            )}
+            {recipe.processing === 'Baking' && (
+              <Image src={bakingPic} alt="Baking-muffins" />
+            )}
             <p>Website: {recipe.websiteName}</p>
             <Link passHref href={recipe.websiteUrl}>
               <StyledButton>Zur Website</StyledButton>
@@ -49,8 +58,12 @@ const RecipeDetailPage = () => {
       case 'Other':
         return (
           <StyledRecipeDetails>
-            {recipe.processing === 'Cooking' && <p>Kochrezept</p>}
-            {recipe.processing === 'Baking' && <p>Backrezept</p>}
+            {recipe.processing === 'Cooking' && (
+              <Image src={cookingPic} alt="Cooking ingredients" />
+            )}
+            {recipe.processing === 'Baking' && (
+              <Image src={bakingPic} alt="Baking-muffins" />
+            )}
             <p>Quelle:</p>
             <p>{recipe.otherSource}</p>
             <p>Aufbewahrungsort:</p>
