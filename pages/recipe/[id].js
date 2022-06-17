@@ -28,6 +28,7 @@ const RecipeDetailPage = () => {
       case 'Book':
         return (
           <StyledRecipeDetails>
+            <p>{recipe.processing}</p>
             <p>Autor: {recipe.bookAuthor}</p>
             <h3>Buch: {recipe.bookTitle}</h3>
             <p>Seite {recipe.bookPage}</p>
@@ -36,6 +37,7 @@ const RecipeDetailPage = () => {
       case 'Website':
         return (
           <StyledRecipeDetails>
+            <p>{recipe.processing}</p>
             <p>Website: {recipe.websiteName}</p>
             <Link passHref href={recipe.websiteUrl}>
               <StyledButton>Zur Website</StyledButton>
@@ -45,6 +47,7 @@ const RecipeDetailPage = () => {
       case 'Other':
         return (
           <StyledRecipeDetails>
+            <p>{recipe.processing}</p>
             <p>Quelle:</p>
             <p>{recipe.otherSource}</p>
             <p>Aufbewahrungsort:</p>
