@@ -22,6 +22,8 @@ export default function RecipeForm({ id }) {
     websiteUrl: '',
     otherSource: '',
     otherLocation: '',
+    otherIngredients: '',
+    otherInstructions: '',
     isLiked: false,
     id: nanoid(),
   };
@@ -191,6 +193,27 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, otherLocation: event.target.value });
                 }}
               ></StyledInput>
+              <textarea
+                rows="5"
+                placeholder="Zutaten"
+                onChange={event => {
+                  setRecipe({
+                    ...recipe,
+                    otherIngredients: event.target.value,
+                  });
+                }}
+              ></textarea>
+
+              <textarea
+                rows="5"
+                placeholder="Zubereitung"
+                onChange={event => {
+                  setRecipe({
+                    ...recipe,
+                    otherInstructions: event.target.value,
+                  });
+                }}
+              ></textarea>
             </>
           )}
           <StyledButton type="submit">Save</StyledButton>

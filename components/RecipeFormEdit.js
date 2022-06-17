@@ -187,6 +187,29 @@ export default function RecipeFormEdit({ id }) {
                 });
               }}
             ></StyledInput>
+            <textarea
+              rows="5"
+              placeholder="Zutaten"
+              defaultValue={recipeEdit.otherIngredients}
+              onChange={event => {
+                setRecipeEdit({
+                  ...recipe,
+                  otherIngredients: event.target.value,
+                });
+              }}
+            ></textarea>
+
+            <textarea
+              rows="5"
+              placeholder="Zubereitung"
+              defaultValue={recipeEdit.otherInstructions}
+              onChange={event => {
+                setRecipeEdit({
+                  ...recipe,
+                  otherInstructions: event.target.value,
+                });
+              }}
+            ></textarea>
           </>
         )}
 

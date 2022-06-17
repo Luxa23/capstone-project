@@ -47,6 +47,8 @@ const RecipeDetailPage = () => {
           <StyledRecipeDetails>
             <p>Quelle: {recipe.otherSource}</p>
             <p>Aufbewahrungsort: {recipe.otherLocation}</p>
+            <p>Zutaten: {recipe.otherIngredients}</p>
+            <p>Zubereitung: {recipe.otherInstructions}</p>
           </StyledRecipeDetails>
         );
 
