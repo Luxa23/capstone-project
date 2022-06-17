@@ -38,7 +38,7 @@ const RecipeDetailPage = () => {
           <StyledRecipeDetails>
             <p>Website: {recipe.websiteName}</p>
             <Link passHref href={recipe.websiteUrl}>
-              <StyledButton>Visit website</StyledButton>
+              <StyledButton>Zur Website</StyledButton>
             </Link>
           </StyledRecipeDetails>
         );
