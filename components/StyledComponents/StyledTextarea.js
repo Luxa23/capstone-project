@@ -11,6 +11,10 @@ const StyledTextareas = styled.textarea`
   color: #666666;
   width: 17rem;
   resize: none;
+
+  ::placeholder {
+    color: #c9c0c4;
+  }
 `;
 
 export default StyledTextareas;

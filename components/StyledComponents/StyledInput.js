@@ -9,6 +9,10 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-weight: 300;
   color: #666666;
+
+  ::placeholder {
+    color: #c9c0c4;
+  }
 `;
 
 export default StyledInput;
