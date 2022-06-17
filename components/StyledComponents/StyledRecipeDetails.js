@@ -10,6 +10,10 @@ const StyledRecipeDetails = styled.div`
     width: 17rem;
     margin: 0 2rem;
   }
+
+  p {
+    white-space: pre-line;
+  }
 `;
 
 export default StyledRecipeDetails;

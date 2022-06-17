@@ -17,6 +17,7 @@ import StyledRecipeDetails from './StyledRecipeDetails';
 import StyledAText from './StyledAText';
 import StyledTextHome from './StyledTextHome';
 import StyledNavigation from './StyledNavigation';
+import StyledTextarea from './StyledTextarea';
 
 export {
   StyledButton,
@@ -38,4 +39,5 @@ export {
   StyledAText,
   StyledTextHome,
   StyledNavigation,
+  StyledTextarea,
 };

@@ -38,15 +38,21 @@ const RecipeDetailPage = () => {
           <StyledRecipeDetails>
             <p>Website: {recipe.websiteName}</p>
             <Link passHref href={recipe.websiteUrl}>
-              <StyledButton>Visit website</StyledButton>
+              <StyledButton>Zur Website</StyledButton>
             </Link>
           </StyledRecipeDetails>
         );
       case 'Other':
         return (
           <StyledRecipeDetails>
-            <p>Quelle: {recipe.otherSource}</p>
-            <p>Aufbewahrungsort: {recipe.otherLocation}</p>
+            <p>Quelle:</p>
+            <p>{recipe.otherSource}</p>
+            <p>Aufbewahrungsort:</p>
+            <p>{recipe.otherLocation}</p>
+            <p>Zutaten:</p>
+            <p> {recipe.otherIngredients}</p>
+            <p>Zubereitung:</p>
+            <p> {recipe.otherInstructions}</p>
           </StyledRecipeDetails>
         );
 
