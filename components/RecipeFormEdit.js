@@ -232,6 +232,7 @@ export default function RecipeFormEdit({ id }) {
               rows="5"
               placeholder="Zutaten"
               defaultValue={recipeEdit.otherIngredients}
+              maxLength="2000"
               onChange={event => {
                 setRecipeEdit({
                   ...recipe,
@@ -244,6 +245,7 @@ export default function RecipeFormEdit({ id }) {
               rows="5"
               placeholder="Zubereitung"
               defaultValue={recipeEdit.otherInstructions}
+              maxLength="2000"
               onChange={event => {
                 setRecipeEdit({
                   ...recipe,

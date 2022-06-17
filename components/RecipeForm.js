@@ -230,6 +230,7 @@ export default function RecipeForm({ id }) {
               ></StyledInput>
               <StyledTextarea
                 placeholder="Zutaten"
+                maxLength="2000"
                 onChange={event => {
                   setRecipe({
                     ...recipe,
@@ -240,6 +241,7 @@ export default function RecipeForm({ id }) {
 
               <StyledTextarea
                 placeholder="Zubereitung"
+                maxLength="2000"
                 onChange={event => {
                   setRecipe({
                     ...recipe,
