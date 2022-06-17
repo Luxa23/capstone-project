@@ -45,10 +45,14 @@ const RecipeDetailPage = () => {
       case 'Other':
         return (
           <StyledRecipeDetails>
-            <p>Quelle: {recipe.otherSource}</p>
-            <p>Aufbewahrungsort: {recipe.otherLocation}</p>
-            <p>Zutaten: {recipe.otherIngredients}</p>
-            <p>Zubereitung: {recipe.otherInstructions}</p>
+            <p>Quelle:</p>
+            <p>{recipe.otherSource}</p>
+            <p>Aufbewahrungsort:</p>
+            <p>{recipe.otherLocation}</p>
+            <p>Zutaten:</p>
+            <p> {recipe.otherIngredients}</p>
+            <p>Zubereitung:</p>
+            <p> {recipe.otherInstructions}</p>
           </StyledRecipeDetails>
         );
 
