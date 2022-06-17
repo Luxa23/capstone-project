@@ -11,7 +11,7 @@ const StyledForm = styled.form`
     padding: 1rem;
     overflow: auto;
     ${({ isActive }) =>
-      isActive && `grid-template-rows: 3rem 8rem 3rem 3rem 7rem 7rem 1fr;`}
+      isActive && `grid-template-rows: 3rem 8rem 3rem 3rem 8rem 8rem 1fr;`}
   }
 
   & button,
