@@ -6,6 +6,7 @@ import {
   StyledHeaderIcons,
   StyledA,
   StyledButtonIcon,
+  StyledList,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -35,9 +36,14 @@ const RecipeDetailPage = () => {
             {recipe.processing === 'Baking' && (
               <Image src={bakingPic} alt="Baking-muffins" />
             )}
-            <p>Autor: {recipe.bookAuthor}</p>
-            <h3>Buch: {recipe.bookTitle}</h3>
-            <p>Seite {recipe.bookPage}</p>
+            <h1>{recipe.recipeTitle}</h1>
+            <StyledList>
+              <li>Autor:</li>
+              <li>{recipe.bookAuthor}</li>
+              <li>Buch:</li>
+              <li>{recipe.bookTitle}</li>
+              <li>Seite {recipe.bookPage}</li>
+            </StyledList>
           </StyledRecipeDetails>
         );
       case 'Website':
@@ -49,7 +55,12 @@ const RecipeDetailPage = () => {
             {recipe.processing === 'Baking' && (
               <Image src={bakingPic} alt="Baking-muffins" />
             )}
-            <p>Website: {recipe.websiteName}</p>
+            <h1>{recipe.recipeTitle}</h1>
+            <StyledList>
+              <li>Website:</li>
+              <li>{recipe.websiteName}</li>
+            </StyledList>
+
             <Link passHref href={recipe.websiteUrl}>
               <StyledButton>Zur Website</StyledButton>
             </Link>
@@ -64,14 +75,17 @@ const RecipeDetailPage = () => {
             {recipe.processing === 'Baking' && (
               <Image src={bakingPic} alt="Baking-muffins" />
             )}
-            <p>Quelle:</p>
-            <p>{recipe.otherSource}</p>
-            <p>Aufbewahrungsort:</p>
-            <p>{recipe.otherLocation}</p>
-            <p>Zutaten:</p>
-            <p> {recipe.otherIngredients}</p>
-            <p>Zubereitung:</p>
-            <p> {recipe.otherInstructions}</p>
+            <h1>{recipe.recipeTitle}</h1>
+            <StyledList>
+              <li>Quelle:</li>
+              <li>{recipe.otherSource}</li>
+              <li>Aufbewahrungsort:</li>
+              <li>{recipe.otherLocation}</li>
+              <li>Zutaten:</li>
+              <li className="li--structure">{recipe.otherIngredients}</li>
+              <li>Zubereitung:</li>
+              <li className="li--structure">{recipe.otherInstructions}</li>
+            </StyledList>
           </StyledRecipeDetails>
         );
 
@@ -99,7 +113,6 @@ const RecipeDetailPage = () => {
               </Link>
             </>
           </StyledHeaderIcons>
-          <h1>{recipe.recipeTitle}</h1>
         </StyledHeader>
         {origin()}
       </StyledPageContainer>

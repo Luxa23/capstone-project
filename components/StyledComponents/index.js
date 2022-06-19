@@ -1,5 +1,6 @@
 import StyledButton from './StyledButton';
 import StyledButtonIcon from './StyledButtonIcon';
+import StyledList from './StyledDetails';
 import StyledForm from './StyledForm';
 import StyledInput from './StyledInput';
 import StyledSearch from './StyledSearch';
@@ -22,6 +23,7 @@ import StyledTextarea from './StyledTextarea';
 export {
   StyledButton,
   StyledButtonIcon,
+  StyledList,
   StyledForm,
   StyledInput,
   StyledSearch,
