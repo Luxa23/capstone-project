@@ -12,7 +12,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PenIcon from '../../public/penicon.svg';
 import ArrowLeft from '../../public/arrowleft.svg';
-import bakingPic from '../../public/baking-recipe-muffins-medium.jpg';
+import bakingPic from '../../public/baking-recipe-medium.jpg';
 import cookingPic from '../../public/cooking-recipe-ingredients-medium.jpg';
 import { useRouter } from 'next/router';
 import useStore from '../../hooks/useStore';
