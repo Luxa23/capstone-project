@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledTextareas = styled.textarea`
+const StyledTextarea = styled.textarea`
   background: #f4efef;
   border-radius: 5px;
   border: none;
@@ -9,7 +9,7 @@ const StyledTextareas = styled.textarea`
   font-size: 16px;
   font-weight: 300;
   color: #666666;
-  width: 17rem;
+  width: 21rem;
   resize: none;
 
   ::placeholder {
@@ -17,4 +17,4 @@ const StyledTextareas = styled.textarea`
   }
 `;
 
-export default StyledTextareas;
+export default StyledTextarea;

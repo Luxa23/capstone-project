@@ -15,6 +15,7 @@ import { nanoid } from 'nanoid';
 export default function RecipeForm({ id }) {
   const emptyRecipe = {
     recipeTitle: '',
+    processing: '',
     origin: '',
     bookTitle: '',
     bookAuthor: '',
@@ -64,6 +65,37 @@ export default function RecipeForm({ id }) {
               setRecipe({ ...recipe, recipeTitle: event.target.value });
             }}
           />
+          <StyledRadioButtonGroup className="radiobuttons-nextToEachOther">
+            <div>
+              <input
+                type="radio"
+                id="Baking"
+                name="processing"
+                value="Baking"
+                required
+                checked={recipe.processing === 'Baking'}
+                onChange={event => {
+                  setRecipe({ ...recipe, processing: event.target.value });
+                }}
+              />
+              <label htmlFor="Baking">Baking</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="Cooking"
+                name="processing"
+                value="Cooking"
+                required
+                checked={recipe.processing === 'Cooking'}
+                onChange={event => {
+                  setRecipe({ ...recipe, processing: event.target.value });
+                }}
+              />
+              <label htmlFor="Cooking">Cooking</label>
+            </div>
+          </StyledRadioButtonGroup>
+
           <StyledRadioButtonGroup>
             <p>Select the origin of the recipe:</p>
             <div>
@@ -198,6 +230,7 @@ export default function RecipeForm({ id }) {
               ></StyledInput>
               <StyledTextarea
                 placeholder="Zutaten"
+                maxLength="2000"
                 onChange={event => {
                   setRecipe({
                     ...recipe,
@@ -208,6 +241,7 @@ export default function RecipeForm({ id }) {
 
               <StyledTextarea
                 placeholder="Zubereitung"
+                maxLength="2000"
                 onChange={event => {
                   setRecipe({
                     ...recipe,

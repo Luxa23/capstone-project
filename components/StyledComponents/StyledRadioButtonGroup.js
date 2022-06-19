@@ -10,6 +10,10 @@ const StyledRadioButtonGroup = styled.fieldset`
   input {
     width: 3rem;
   }
+
+  &.radiobuttons-nextToEachOther {
+    display: flex;
+  }
 `;
 
 export default StyledRadioButtonGroup;

@@ -1,6 +1,5 @@
 import ListEntry from '../components/ListEntry';
 import {
-  StyledButton,
   StyledUl,
   StyledTextHome,
   StyledSearch,
@@ -8,10 +7,8 @@ import {
 } from '../components/StyledComponents';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import useHydration from '../hooks/useHydration';
 import useStore from '../hooks/useStore';
-import PlusIcon from '../public/plusicon.svg';
 import HeaderHome from '../components/HeaderHome';
 import Navigation from '../components/Navigation';
 

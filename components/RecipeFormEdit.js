@@ -45,6 +45,44 @@ export default function RecipeFormEdit({ id }) {
             setRecipeEdit({ ...recipeEdit, recipeTitle: event.target.value });
           }}
         />
+
+        <StyledRadioButtonGroup className="radiobuttons-nextToEachOther">
+          <div>
+            <input
+              type="radio"
+              id="Baking"
+              name="processing"
+              value="Baking"
+              required
+              checked={recipeEdit.processing === 'Baking'}
+              onChange={event => {
+                setRecipeEdit({
+                  ...recipeEdit,
+                  processing: event.target.value,
+                });
+              }}
+            />
+            <label htmlFor="Baking">Baking</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="Cooking"
+              name="processing"
+              value="Cooking"
+              required
+              checked={recipeEdit.processing === 'Cooking'}
+              onChange={event => {
+                setRecipeEdit({
+                  ...recipeEdit,
+                  processing: event.target.value,
+                });
+              }}
+            />
+            <label htmlFor="Cooking">Cooking</label>
+          </div>
+        </StyledRadioButtonGroup>
+
         <StyledRadioButtonGroup>
           <p>Select the origin of the recipe:</p>
           <div>
@@ -194,6 +232,7 @@ export default function RecipeFormEdit({ id }) {
               rows="5"
               placeholder="Zutaten"
               defaultValue={recipeEdit.otherIngredients}
+              maxLength="2000"
               onChange={event => {
                 setRecipeEdit({
                   ...recipe,
@@ -206,6 +245,7 @@ export default function RecipeFormEdit({ id }) {
               rows="5"
               placeholder="Zubereitung"
               defaultValue={recipeEdit.otherInstructions}
+              maxLength="2000"
               onChange={event => {
                 setRecipeEdit({
                   ...recipe,
