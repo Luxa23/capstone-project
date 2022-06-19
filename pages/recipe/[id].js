@@ -1,12 +1,12 @@
 import {
-  StyledPageContainer,
-  StyledRecipeDetails,
+  StyledA,
   StyledButton,
+  StyledButtonIcon,
   StyledHeader,
   StyledHeaderIcons,
-  StyledA,
-  StyledButtonIcon,
   StyledList,
+  StyledPageContainer,
+  StyledRecipeDetails,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
 import Image from 'next/image';

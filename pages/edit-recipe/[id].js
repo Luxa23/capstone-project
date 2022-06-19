@@ -1,8 +1,8 @@
 import {
-  StyledPageContainer,
-  StyledHeader,
   StyledA,
+  StyledHeader,
   StyledHeaderIcons,
+  StyledPageContainer,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
 import ArrowLeft from '../../public/arrowleft.svg';

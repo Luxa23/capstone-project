@@ -1,9 +1,9 @@
 import ListEntry from '../components/ListEntry';
 import {
-  StyledUl,
-  StyledTextHome,
-  StyledSearch,
   StyledPageContainerHome,
+  StyledSearch,
+  StyledTextHome,
+  StyledUl,
 } from '../components/StyledComponents';
 
 import { useState, useEffect } from 'react';

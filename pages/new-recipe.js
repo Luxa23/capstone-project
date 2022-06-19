@@ -1,7 +1,7 @@
 import {
-  StyledPageContainer,
-  StyledHeader,
   StyledA,
+  StyledHeader,
+  StyledPageContainer,
 } from '../components/StyledComponents';
 import RecipeForm from '../components/RecipeForm';
 import Link from 'next/link';

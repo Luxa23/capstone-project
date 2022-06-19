@@ -1,8 +1,8 @@
 import {
-  StyledPageContainer,
+  StyledA,
   StyledHeader,
   StyledHeaderIcons,
-  StyledA,
+  StyledPageContainer,
   StyledUl,
 } from '../components/StyledComponents';
 import Link from 'next/link';
