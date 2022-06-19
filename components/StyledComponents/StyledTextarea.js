@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledTextareas = styled.textarea`
+const StyledTextarea = styled.textarea`
   background: #f4efef;
   border-radius: 5px;
   border: none;
@@ -17,4 +17,4 @@ const StyledTextareas = styled.textarea`
   }
 `;
 
-export default StyledTextareas;
+export default StyledTextarea;
