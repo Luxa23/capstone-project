@@ -59,7 +59,7 @@ export default function RecipeForm({ id }) {
             type="text"
             minLength={2}
             maxLength={60}
-            placeholder="recipe title"
+            placeholder="Name des Rezepts"
             value={recipe.recipeTitle}
             onChange={event => {
               setRecipe({ ...recipe, recipeTitle: event.target.value });
@@ -78,7 +78,7 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, processing: event.target.value });
                 }}
               />
-              <label htmlFor="Baking">Baking</label>
+              <label htmlFor="Baking">Backrezept</label>
             </div>
             <div>
               <input
@@ -92,12 +92,12 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, processing: event.target.value });
                 }}
               />
-              <label htmlFor="Cooking">Cooking</label>
+              <label htmlFor="Cooking">Kochrezept</label>
             </div>
           </StyledRadioButtonGroup>
 
           <StyledRadioButtonGroup>
-            <p>Select the origin of the recipe:</p>
+            <p>Ursprung des Rezepts:</p>
             <div>
               <input
                 type="radio"
@@ -110,7 +110,7 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, origin: event.target.value });
                 }}
               />
-              <label htmlFor="Book">Book</label>
+              <label htmlFor="Book">Buch</label>
             </div>
             <div>
               <input
@@ -123,7 +123,7 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, origin: event.target.value });
                 }}
               ></input>
-              <label htmlFor="Website">Website</label>
+              <label htmlFor="Website">Webseite</label>
             </div>
             <div>
               <input
@@ -136,7 +136,7 @@ export default function RecipeForm({ id }) {
                   setRecipe({ ...recipe, origin: event.target.value });
                 }}
               ></input>
-              <label htmlFor="Other">Other</label>
+              <label htmlFor="Other">Anderer</label>
             </div>
           </StyledRadioButtonGroup>
           {/* book entry */}
@@ -147,7 +147,7 @@ export default function RecipeForm({ id }) {
                 type="text"
                 minLength={2}
                 maxLength={100}
-                placeholder="book title"
+                placeholder="Buchtitel"
                 value={recipe.bookTitle}
                 onChange={event => {
                   setRecipe({ ...recipe, bookTitle: event.target.value });
@@ -158,7 +158,7 @@ export default function RecipeForm({ id }) {
                 type="text"
                 minLength={2}
                 maxLength={100}
-                placeholder="author"
+                placeholder="Autor/in"
                 value={recipe.bookAuthor}
                 onChange={event => {
                   setRecipe({ ...recipe, bookAuthor: event.target.value });
@@ -169,7 +169,7 @@ export default function RecipeForm({ id }) {
                 type="number"
                 minLength={1}
                 maxLength={3}
-                placeholder="page"
+                placeholder="Seite"
                 value={recipe.bookPage}
                 onChange={event => {
                   setRecipe({ ...recipe, bookPage: event.target.value });
@@ -185,7 +185,7 @@ export default function RecipeForm({ id }) {
                 type="test"
                 minLength={1}
                 maxLength={100}
-                placeholder="website"
+                placeholder="Webseite"
                 value={recipe.websiteName}
                 onChange={event => {
                   setRecipe({ ...recipe, websiteName: event.target.value });
@@ -196,7 +196,7 @@ export default function RecipeForm({ id }) {
                 type="url"
                 minLength={1}
                 maxLength={100}
-                placeholder="url"
+                placeholder="URL"
                 value={recipe.websiteUrl}
                 onChange={event => {
                   setRecipe({ ...recipe, websiteUrl: event.target.value });
@@ -211,7 +211,7 @@ export default function RecipeForm({ id }) {
                 type="text"
                 minLength={1}
                 maxLength={100}
-                placeholder="personal source"
+                placeholder="(persönliche) Quelle"
                 value={recipe.otherSource}
                 onChange={event => {
                   setRecipe({ ...recipe, otherSource: event.target.value });
@@ -222,7 +222,7 @@ export default function RecipeForm({ id }) {
                 type="text"
                 minLength={1}
                 maxLength={100}
-                placeholder="location of recipe"
+                placeholder="Wo befindet sich das Rezept?"
                 value={recipe.otherLocation}
                 onChange={event => {
                   setRecipe({ ...recipe, otherLocation: event.target.value });
@@ -252,7 +252,7 @@ export default function RecipeForm({ id }) {
             </>
           )}
           <StyledButton type="submit" className="button--other-active">
-            Save
+            Speichern
           </StyledButton>
         </StyledForm>
       )}

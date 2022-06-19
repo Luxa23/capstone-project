@@ -42,7 +42,7 @@ export default function Home() {
             <StyledSearch>
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Suche..."
                 onChange={handleSearch}
               ></input>
             </StyledSearch>

@@ -38,7 +38,7 @@ const RecipeDetailPage = () => {
             )}
             <h1>{recipe.recipeTitle}</h1>
             <StyledList>
-              <li>Autor:</li>
+              <li>Autor/in:</li>
               <li>{recipe.bookAuthor}</li>
               <li>Buch:</li>
               <li>{recipe.bookTitle}</li>
@@ -57,12 +57,12 @@ const RecipeDetailPage = () => {
             )}
             <h1>{recipe.recipeTitle}</h1>
             <StyledList>
-              <li>Website:</li>
+              <li>Webseite:</li>
               <li>{recipe.websiteName}</li>
             </StyledList>
 
             <Link passHref href={recipe.websiteUrl}>
-              <StyledButton>Zur Website</StyledButton>
+              <StyledButton>Zum Rezept</StyledButton>
             </Link>
           </StyledRecipeDetails>
         );
@@ -77,7 +77,7 @@ const RecipeDetailPage = () => {
             )}
             <h1>{recipe.recipeTitle}</h1>
             <StyledList>
-              <li>Quelle:</li>
+              <li>(persönliche) Quelle:</li>
               <li>{recipe.otherSource}</li>
               <li>Aufbewahrungsort:</li>
               <li>{recipe.otherLocation}</li>
@@ -103,7 +103,7 @@ const RecipeDetailPage = () => {
               <Link passHref href="/">
                 <StyledA>
                   <ArrowLeft width="20px" height="20px" />
-                  back
+                  zurück
                 </StyledA>
               </Link>
               <Link passHref href={`/edit-recipe/${recipe.id}`}>

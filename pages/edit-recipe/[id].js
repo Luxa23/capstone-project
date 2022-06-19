@@ -26,11 +26,11 @@ export default function EditRecipe() {
             <Link passHref href="/">
               <StyledA>
                 <ArrowLeft width="20px" height="20px" />
-                back
+                zurück
               </StyledA>
             </Link>
           </StyledHeaderIcons>
-          <h1>Edit recipe</h1>
+          <h1>Rezept ändern</h1>
         </StyledHeader>
         <RecipeFormEdit id={recipe.id} />
       </StyledPageContainer>

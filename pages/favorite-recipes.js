@@ -23,11 +23,11 @@ export default function FavoriteRecipes() {
           <Link passHref href="/">
             <StyledA>
               <ArrowLeft width="20px" height="20px" />
-              back
+              zurück
             </StyledA>
           </Link>
         </StyledHeaderIcons>
-        <h1>Favorite recipes</h1>
+        <h1>Lieblingsrezepte</h1>
       </StyledHeader>
 
       <StyledUl>
