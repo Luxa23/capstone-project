@@ -1,7 +1,7 @@
 import {
+  StyledButton,
   StyledForm,
   StyledInput,
-  StyledButton,
   StyledRadioButtonGroup,
   StyledTextarea,
 } from './StyledComponents';

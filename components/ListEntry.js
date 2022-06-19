@@ -1,7 +1,7 @@
 import {
   StyledAText,
-  StyledListEntry,
   StyledButtonIcon,
+  StyledListEntry,
 } from '../components/StyledComponents';
 
 import Link from 'next/link';
