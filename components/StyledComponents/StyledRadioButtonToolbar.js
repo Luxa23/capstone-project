@@ -13,7 +13,7 @@ const StyledRadioButtonToolbar = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ffe4e8;
+    background: #ccb6b9;
     border: 1px solid pink;
     border-radius: 5px;
     font-family: var(--font-family);
@@ -27,7 +27,7 @@ const StyledRadioButtonToolbar = styled.div`
   }
 
   input[type='radio']:checked + label {
-    background: #e31b54;
+    background: #5ea6af;
     border-radius: 4px;
     color: white;
     font-family: var(--font-family);

@@ -19,7 +19,7 @@ const StyledRadioButtonGroup = styled.fieldset`
     left: 0;
     height: 1.5rem;
     width: 1.5rem;
-    background: #ffe4e8;
+    background: #ccb6b9;
     border: 0.5px solid pink;
     color: white;
     margin-right: 0.75rem;
@@ -28,7 +28,7 @@ const StyledRadioButtonGroup = styled.fieldset`
   }
 
   input:checked {
-    background: #e31b54;
+    background: #5ea6af;
   }
 
   input:checked::before {
