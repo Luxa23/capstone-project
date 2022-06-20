@@ -13,6 +13,7 @@ import StyledNavigation from './StyledNavigation';
 import StyledPageContainer from './StyledPageContainer';
 import StyledPageContainerHome from './StyledPageContainerHome';
 import StyledRadioButtonGroup from './StyledRadioButtonGroup';
+import StyledRadioButtonToolbar from './StyledRadioButtonToolbar';
 import StyledRecipeDetails from './StyledRecipeDetails';
 import StyledSearch from './StyledSearch';
 import StyledTextarea from './StyledTextarea';
@@ -36,6 +37,7 @@ export {
   StyledPageContainer,
   StyledPageContainerHome,
   StyledRadioButtonGroup,
+  StyledRadioButtonToolbar,
   StyledRecipeDetails,
   StyledSearch,
   StyledTextarea,

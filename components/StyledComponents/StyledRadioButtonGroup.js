@@ -28,7 +28,7 @@ const StyledRadioButtonGroup = styled.fieldset`
   }
 
   input:checked {
-    background: var(--primary-color);
+    background: #e31b54;
   }
 
   input:checked::before {
@@ -38,9 +38,9 @@ const StyledRadioButtonGroup = styled.fieldset`
     text-rendering: auto;
   }
 
-  &.radiobuttons-nextToEachOther {
+  /* &.radiobuttons-nextToEachOther {
     display: flex;
-  }
+  } */
 
   p {
     margin: 0;

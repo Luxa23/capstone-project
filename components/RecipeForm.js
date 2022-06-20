@@ -3,6 +3,7 @@ import {
   StyledForm,
   StyledInput,
   StyledRadioButtonGroup,
+  StyledRadioButtonToolbar,
   StyledTextarea,
 } from '../components/StyledComponents';
 import { useState } from 'react';
@@ -65,8 +66,8 @@ export default function RecipeForm({ id }) {
               setRecipe({ ...recipe, recipeTitle: event.target.value });
             }}
           />
-          <StyledRadioButtonGroup className="radiobuttons-nextToEachOther">
-            <div>
+          <div>
+            <StyledRadioButtonToolbar>
               <input
                 type="radio"
                 id="Baking"
@@ -79,8 +80,8 @@ export default function RecipeForm({ id }) {
                 }}
               />
               <label htmlFor="Baking">Backrezept</label>
-            </div>
-            <div>
+            </StyledRadioButtonToolbar>
+            <StyledRadioButtonToolbar>
               <input
                 type="radio"
                 id="Cooking"
@@ -93,8 +94,8 @@ export default function RecipeForm({ id }) {
                 }}
               />
               <label htmlFor="Cooking">Kochrezept</label>
-            </div>
-          </StyledRadioButtonGroup>
+            </StyledRadioButtonToolbar>
+          </div>
 
           <StyledRadioButtonGroup>
             <p>Ursprung des Rezepts:</p>
