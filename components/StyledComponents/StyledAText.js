@@ -9,6 +9,7 @@ const StyledAText = styled.a`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  flex-grow: 1;
 `;
 
 export default StyledAText;
