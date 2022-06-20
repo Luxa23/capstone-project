@@ -41,8 +41,9 @@ const RecipeDetailPage = () => {
               <li>Autor/in:</li>
               <li>{recipe.bookAuthor}</li>
               <li>Buch:</li>
-              <li>{recipe.bookTitle}</li>
-              <li>Seite {recipe.bookPage}</li>
+              <li>
+                {recipe.bookTitle}, Seite {recipe.bookPage}
+              </li>
             </StyledList>
           </StyledRecipeDetails>
         );
