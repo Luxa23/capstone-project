@@ -3,6 +3,7 @@ import {
   StyledForm,
   StyledInput,
   StyledRadioButtonGroup,
+  StyledRadioButtonToolbar,
   StyledTextarea,
 } from './StyledComponents';
 import useStore from '../hooks/useStore';
@@ -45,9 +46,8 @@ export default function RecipeFormEdit({ id }) {
             setRecipeEdit({ ...recipeEdit, recipeTitle: event.target.value });
           }}
         />
-
-        <StyledRadioButtonGroup className="radiobuttons-nextToEachOther">
-          <div>
+        <div>
+          <StyledRadioButtonToolbar>
             <input
               type="radio"
               id="Baking"
@@ -63,8 +63,8 @@ export default function RecipeFormEdit({ id }) {
               }}
             />
             <label htmlFor="Baking">Backrezept</label>
-          </div>
-          <div>
+          </StyledRadioButtonToolbar>
+          <StyledRadioButtonToolbar>
             <input
               type="radio"
               id="Cooking"
@@ -80,8 +80,8 @@ export default function RecipeFormEdit({ id }) {
               }}
             />
             <label htmlFor="Cooking">Kochrezept</label>
-          </div>
-        </StyledRadioButtonGroup>
+          </StyledRadioButtonToolbar>
+        </div>
 
         <StyledRadioButtonGroup>
           <p>Ursprung des Rezepts</p>
