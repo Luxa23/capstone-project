@@ -20,7 +20,6 @@ const StyledRadioButtonGroup = styled.fieldset`
     height: 1.5rem;
     width: 1.5rem;
     background: #ccb6b9;
-    border: 0.5px solid pink;
     color: white;
     margin-right: 0.75rem;
     border-radius: 50%;

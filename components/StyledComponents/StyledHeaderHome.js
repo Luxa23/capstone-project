@@ -12,6 +12,7 @@ const StyledHeaderHome = styled.div`
     margin: 0;
     text-align: center;
     color: #5ea6af;
+    border-bottom: none;
   }
 `;
 

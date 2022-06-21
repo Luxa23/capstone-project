@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledList = styled.ul`
   list-style-type: none;
+  margin: 0;
 
   & li:nth-of-type(odd) {
     font-weight: 700;

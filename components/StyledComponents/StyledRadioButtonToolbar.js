@@ -13,8 +13,7 @@ const StyledRadioButtonToolbar = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ccb6b9;
-    border: 1px solid pink;
+    background: #e5cdd0;
     border-radius: 5px;
     font-family: var(--font-family);
     color: #666666;

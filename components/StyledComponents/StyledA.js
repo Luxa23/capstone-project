@@ -9,13 +9,13 @@ const StyledA = styled.a`
   display: flex;
 
   &.link--active {
-    color: #ccb6b9;
+    color: #b7a3a6;
     background-color: transparent;
     border: none;
     ${({ isActive }) =>
       isActive &&
       `       
-        color: #7f7274;
+        color: #726668;
         background-color: transparent;
     border: none;
     `};
