@@ -1,8 +1,9 @@
 import {
+  StyledButton,
   StyledForm,
   StyledInput,
-  StyledButton,
   StyledRadioButtonGroup,
+  StyledRadioButtonToolbar,
   StyledTextarea,
 } from './StyledComponents';
 import useStore from '../hooks/useStore';
@@ -39,15 +40,14 @@ export default function RecipeFormEdit({ id }) {
           type="text"
           minLength={2}
           maxLength={60}
-          placeholder="recipeTitle"
+          placeholder="Name des Rezepts"
           value={recipeEdit.recipeTitle}
           onChange={event => {
             setRecipeEdit({ ...recipeEdit, recipeTitle: event.target.value });
           }}
         />
-
-        <StyledRadioButtonGroup className="radiobuttons-nextToEachOther">
-          <div>
+        <div>
+          <StyledRadioButtonToolbar>
             <input
               type="radio"
               id="Baking"
@@ -62,9 +62,9 @@ export default function RecipeFormEdit({ id }) {
                 });
               }}
             />
-            <label htmlFor="Baking">Baking</label>
-          </div>
-          <div>
+            <label htmlFor="Baking">Backrezept</label>
+          </StyledRadioButtonToolbar>
+          <StyledRadioButtonToolbar>
             <input
               type="radio"
               id="Cooking"
@@ -79,12 +79,12 @@ export default function RecipeFormEdit({ id }) {
                 });
               }}
             />
-            <label htmlFor="Cooking">Cooking</label>
-          </div>
-        </StyledRadioButtonGroup>
+            <label htmlFor="Cooking">Kochrezept</label>
+          </StyledRadioButtonToolbar>
+        </div>
 
         <StyledRadioButtonGroup>
-          <p>Select the origin of the recipe:</p>
+          <p>Ursprung des Rezepts</p>
           <div>
             <input
               type="radio"
@@ -97,7 +97,7 @@ export default function RecipeFormEdit({ id }) {
                 setRecipeEdit({ ...recipeEdit, origin: event.target.value });
               }}
             />
-            <label htmlFor="Book">Book</label>
+            <label htmlFor="Book">Buch</label>
           </div>
           <div>
             <input
@@ -110,7 +110,7 @@ export default function RecipeFormEdit({ id }) {
                 setRecipeEdit({ ...recipeEdit, origin: event.target.value });
               }}
             ></input>
-            <label htmlFor="Website">Website</label>
+            <label htmlFor="website">Webseite</label>
           </div>
           <div>
             <input
@@ -123,7 +123,7 @@ export default function RecipeFormEdit({ id }) {
                 setRecipeEdit({ ...recipeEdit, origin: event.target.value });
               }}
             ></input>
-            <label htmlFor="Other">Other</label>
+            <label htmlFor="Other">Anderer</label>
           </div>
         </StyledRadioButtonGroup>
 
@@ -134,7 +134,7 @@ export default function RecipeFormEdit({ id }) {
               type="text"
               minLength={2}
               maxLength={100}
-              placeholder="bookTitle"
+              placeholder="Buchtitel"
               value={recipeEdit.bookTitle}
               onChange={event => {
                 setRecipeEdit({ ...recipeEdit, bookTitle: event.target.value });
@@ -145,7 +145,7 @@ export default function RecipeFormEdit({ id }) {
               type="text"
               minLength={2}
               maxLength={100}
-              placeholder="bookAuthor"
+              placeholder="Autor/in"
               value={recipeEdit.bookAuthor}
               onChange={event => {
                 setRecipeEdit({
@@ -159,7 +159,7 @@ export default function RecipeFormEdit({ id }) {
               type="number"
               minLength={1}
               maxLength={3}
-              placeholder="page"
+              placeholder="Seite"
               value={recipeEdit.bookPage}
               onChange={event => {
                 setRecipeEdit({ ...recipeEdit, bookPage: event.target.value });
@@ -174,7 +174,7 @@ export default function RecipeFormEdit({ id }) {
               type="test"
               minLength={1}
               maxLength={100}
-              placeholder="website"
+              placeholder="Webseite"
               value={recipeEdit.websiteName}
               onChange={event => {
                 setRecipeEdit({
@@ -188,7 +188,7 @@ export default function RecipeFormEdit({ id }) {
               type="url"
               minLength={1}
               maxLength={100}
-              placeholder="url"
+              placeholder="URL"
               value={recipeEdit.websiteUrl}
               onChange={event => {
                 setRecipeEdit({
@@ -205,7 +205,7 @@ export default function RecipeFormEdit({ id }) {
               type="text"
               minLength={1}
               maxLength={100}
-              placeholder="personal source"
+              placeholder="(persönliche) Quelle"
               value={recipeEdit.otherSource}
               onChange={event => {
                 setRecipeEdit({
@@ -219,7 +219,7 @@ export default function RecipeFormEdit({ id }) {
               type="text"
               minLength={1}
               maxLength={100}
-              placeholder="location of recipe"
+              placeholder="Wo befindet sich das Rezept?"
               value={recipeEdit.otherLocation}
               onChange={event => {
                 setRecipeEdit({
@@ -257,7 +257,7 @@ export default function RecipeFormEdit({ id }) {
         )}
 
         <StyledButton type="submit" className="button--other-active">
-          Save changes
+          Änderungen speichern
         </StyledButton>
       </StyledForm>
     </>

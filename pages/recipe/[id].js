@@ -1,17 +1,18 @@
 import {
-  StyledPageContainer,
-  StyledRecipeDetails,
+  StyledA,
   StyledButton,
+  StyledButtonIcon,
   StyledHeader,
   StyledHeaderIcons,
-  StyledA,
-  StyledButtonIcon,
+  StyledList,
+  StyledPageContainer,
+  StyledRecipeDetails,
 } from '../../components/StyledComponents';
 import Link from 'next/link';
 import Image from 'next/image';
 import PenIcon from '../../public/penicon.svg';
 import ArrowLeft from '../../public/arrowleft.svg';
-import bakingPic from '../../public/baking-recipe-muffins-medium.jpg';
+import bakingPic from '../../public/baking-recipe-medium.jpg';
 import cookingPic from '../../public/cooking-recipe-ingredients-medium.jpg';
 import { useRouter } from 'next/router';
 import useStore from '../../hooks/useStore';
@@ -35,9 +36,15 @@ const RecipeDetailPage = () => {
             {recipe.processing === 'Baking' && (
               <Image src={bakingPic} alt="Baking-muffins" />
             )}
-            <p>Autor: {recipe.bookAuthor}</p>
-            <h3>Buch: {recipe.bookTitle}</h3>
-            <p>Seite {recipe.bookPage}</p>
+            <h1>{recipe.recipeTitle}</h1>
+            <StyledList>
+              <li>Autor/in:</li>
+              <li>{recipe.bookAuthor}</li>
+              <li>Buch:</li>
+              <li>
+                {recipe.bookTitle}, Seite {recipe.bookPage}
+              </li>
+            </StyledList>
           </StyledRecipeDetails>
         );
       case 'Website':
@@ -49,9 +56,14 @@ const RecipeDetailPage = () => {
             {recipe.processing === 'Baking' && (
               <Image src={bakingPic} alt="Baking-muffins" />
             )}
-            <p>Website: {recipe.websiteName}</p>
+            <h1>{recipe.recipeTitle}</h1>
+            <StyledList>
+              <li>Webseite:</li>
+              <li>{recipe.websiteName}</li>
+            </StyledList>
+
             <Link passHref href={recipe.websiteUrl}>
-              <StyledButton>Zur Website</StyledButton>
+              <StyledButton>Zum Rezept</StyledButton>
             </Link>
           </StyledRecipeDetails>
         );
@@ -64,14 +76,17 @@ const RecipeDetailPage = () => {
             {recipe.processing === 'Baking' && (
               <Image src={bakingPic} alt="Baking-muffins" />
             )}
-            <p>Quelle:</p>
-            <p>{recipe.otherSource}</p>
-            <p>Aufbewahrungsort:</p>
-            <p>{recipe.otherLocation}</p>
-            <p>Zutaten:</p>
-            <p> {recipe.otherIngredients}</p>
-            <p>Zubereitung:</p>
-            <p> {recipe.otherInstructions}</p>
+            <h1>{recipe.recipeTitle}</h1>
+            <StyledList>
+              <li>(persönliche) Quelle:</li>
+              <li>{recipe.otherSource}</li>
+              <li>Aufbewahrungsort:</li>
+              <li>{recipe.otherLocation}</li>
+              <li>Zutaten:</li>
+              <li className="li--structure">{recipe.otherIngredients}</li>
+              <li>Zubereitung:</li>
+              <li className="li--structure">{recipe.otherInstructions}</li>
+            </StyledList>
           </StyledRecipeDetails>
         );
 
@@ -89,7 +104,7 @@ const RecipeDetailPage = () => {
               <Link passHref href="/">
                 <StyledA>
                   <ArrowLeft width="20px" height="20px" />
-                  back
+                  zurück
                 </StyledA>
               </Link>
               <Link passHref href={`/edit-recipe/${recipe.id}`}>
@@ -99,7 +114,6 @@ const RecipeDetailPage = () => {
               </Link>
             </>
           </StyledHeaderIcons>
-          <h1>{recipe.recipeTitle}</h1>
         </StyledHeader>
         {origin()}
       </StyledPageContainer>

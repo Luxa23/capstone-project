@@ -1,8 +1,8 @@
 import {
-  StyledHeader,
   StyledA,
-  StyledHeaderIcons,
   StyledButtonIcon,
+  StyledHeader,
+  StyledHeaderIcons,
 } from './StyledComponents';
 
 import PenIcon from '../public/penicon.svg';

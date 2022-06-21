@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledHeaderHome = styled.div`
-  background: linear-gradient(355.31deg, #cdfbfe -25.03%, #fd6f8e 89.24%);
+  background-color: #ffe4e8;
   grid-area: header;
 
   & h1 {
@@ -11,6 +11,8 @@ const StyledHeaderHome = styled.div`
     padding: 1.5rem;
     margin: 0;
     text-align: center;
+    color: #5ea6af;
+    border-bottom: none;
   }
 `;
 

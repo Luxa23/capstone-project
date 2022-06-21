@@ -1,7 +1,7 @@
 import {
-  StyledPageContainer,
-  StyledHeader,
   StyledA,
+  StyledHeader,
+  StyledPageContainer,
 } from '../components/StyledComponents';
 import RecipeForm from '../components/RecipeForm';
 import Link from 'next/link';
@@ -15,10 +15,10 @@ export default function NewRecipe() {
         <Link passHref href="/">
           <StyledA>
             <Arrowleft width="20px" height="20px" />
-            back
+            zurück
           </StyledA>
         </Link>
-        <h1>Add new recipe</h1>
+        <h1>Neues Rezept</h1>
       </StyledHeader>
       <RecipeForm />
       <Navigation />

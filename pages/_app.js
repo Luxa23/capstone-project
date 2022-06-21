@@ -25,6 +25,11 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 600;
       grid-row-start: 2;
       grid-row-end: 3;
+      margin:0;
+      padding: 1rem 0;
+      border-bottom: 1px solid #5ea6af;
+
+
 
     }
 `;

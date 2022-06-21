@@ -1,9 +1,9 @@
 import ListEntry from '../components/ListEntry';
 import {
-  StyledUl,
-  StyledTextHome,
-  StyledSearch,
   StyledPageContainerHome,
+  StyledSearch,
+  StyledTextHome,
+  StyledUl,
 } from '../components/StyledComponents';
 
 import { useState, useEffect } from 'react';
@@ -42,7 +42,7 @@ export default function Home() {
             <StyledSearch>
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Suche..."
                 onChange={handleSearch}
               ></input>
             </StyledSearch>
