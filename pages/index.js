@@ -15,21 +15,23 @@ import Navigation from '../components/Navigation';
 export default function Home() {
   const recipeList = useStore(state => state.recipeList);
   const [recipesToShow, setRecipesToShow] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const hydrated = useHydration();
   const hasRecipes = recipeList.length > 0;
   const hasFound = recipesToShow.length > 0;
 
   useEffect(() => {
-    setRecipesToShow(recipeList);
-  }, [recipeList]);
-
-  function handleSearch(event) {
-    const searchTerm = event.target.value;
     setRecipesToShow(
       recipeList.filter(recipe =>
-        recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
+        searchTerm === ''
+          ? true
+          : recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
+  }, [recipeList, searchTerm]);
+
+  function handleSearch(event) {
+    setSearchTerm(event.target.value);
   }
 
   return (
