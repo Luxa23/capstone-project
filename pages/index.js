@@ -20,6 +20,28 @@ export default function Home() {
   const hasRecipes = recipeList.length > 0;
   const hasFound = recipesToShow.length > 0;
 
+  // const recipeTitlesList = recipeList.map(recipeTitle => {
+  //   return recipeTitle.recipeTitle;
+  // });
+  // const [sortList, setSortList] = useState(recipeTitlesList.sort());
+
+  // console.log(sortList);
+
+  function handleSorting(asc = true) {
+    const sorted = [...recipesToShow].sort((a, b) => {
+      if (asc) {
+        return a.recipeTitle.localeCompare(b.recipeTitle, 'de', {
+          sensitivity: 'base',
+        });
+      } else {
+        return b.recipeTitle.localeCompare(a.recipeTitle, 'de', {
+          sensitivity: 'base',
+        });
+      }
+    });
+    setRecipesToShow(sorted);
+  }
+
   useEffect(() => {
     setRecipesToShow(
       recipeList.filter(recipe =>
@@ -48,6 +70,15 @@ export default function Home() {
                 onChange={handleSearch}
               ></input>
             </StyledSearch>
+
+            <button onClick={handleSorting}>Sortieren A-Z</button>
+            <button
+              onClick={() => {
+                handleSorting(false);
+              }}
+            >
+              Sortieren Z-A
+            </button>
 
             {!hasFound && hasRecipes && (
               <StyledTextHome>
