@@ -20,12 +20,7 @@ export default function Home() {
   const hasRecipes = recipeList.length > 0;
   const hasFound = recipesToShow.length > 0;
 
-  // const recipeTitlesList = recipeList.map(recipeTitle => {
-  //   return recipeTitle.recipeTitle;
-  // });
-  // const [sortList, setSortList] = useState(recipeTitlesList.sort());
-
-  // console.log(sortList);
+  const [sort, setSort] = useState(null);
 
   function handleSorting(asc = true) {
     const sorted = [...recipesToShow].sort((a, b) => {
@@ -44,13 +39,31 @@ export default function Home() {
 
   useEffect(() => {
     setRecipesToShow(
-      recipeList.filter(recipe =>
-        searchTerm === ''
-          ? true
-          : recipe.recipeTitle.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+      recipeList
+        .filter(recipe =>
+          /*  TODO not necessary to compare against empty string **/
+
+          searchTerm === ''
+            ? true
+            : recipe.recipeTitle
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase())
+        )
+        .sort((a, b) => {
+          if (sort) {
+            return a.recipeTitle.localeCompare(b.recipeTitle, 'de', {
+              sensitivity: 'base',
+            });
+          } else if (sort === false) {
+            return b.recipeTitle.localeCompare(a.recipeTitle, 'de', {
+              sensitivity: 'base',
+            });
+          } else {
+            return 0;
+          }
+        })
     );
-  }, [recipeList, searchTerm]);
+  }, [recipeList, searchTerm, sort]);
 
   function handleSearch(event) {
     setSearchTerm(event.target.value);
@@ -71,10 +84,16 @@ export default function Home() {
               ></input>
             </StyledSearch>
 
-            <button onClick={handleSorting}>Sortieren A-Z</button>
             <button
               onClick={() => {
-                handleSorting(false);
+                setSort(true);
+              }}
+            >
+              Sortieren A-Z
+            </button>
+            <button
+              onClick={() => {
+                setSort(false);
               }}
             >
               Sortieren Z-A
