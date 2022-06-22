@@ -8,7 +8,7 @@ const StyledRecipeDetails = styled.div`
 
   & button {
     width: 17rem;
-    margin: 0 2rem;
+    margin: 1.5rem;
   }
 `;
 

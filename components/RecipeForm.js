@@ -219,7 +219,6 @@ export default function RecipeForm({ id }) {
                 }}
               ></StyledInput>
               <StyledInput
-                required
                 type="text"
                 minLength={1}
                 maxLength={100}
