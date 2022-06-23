@@ -14,6 +14,7 @@ import StyledPageContainer from './StyledPageContainer';
 import StyledPageContainerHome from './StyledPageContainerHome';
 import StyledRadioButtonGroup from './StyledRadioButtonGroup';
 import StyledRadioButtonToolbar from './StyledRadioButtonToolbar';
+import StyledRadioButtonsThree from './StyledRadioButtonsThree';
 import StyledRecipeDetails from './StyledRecipeDetails';
 import StyledSearch from './StyledSearch';
 import StyledTextarea from './StyledTextarea';
@@ -38,6 +39,7 @@ export {
   StyledPageContainerHome,
   StyledRadioButtonGroup,
   StyledRadioButtonToolbar,
+  StyledRadioButtonsThree,
   StyledRecipeDetails,
   StyledSearch,
   StyledTextarea,
