@@ -1,6 +1,7 @@
 import ListEntry from '../components/ListEntry';
 import {
   StyledPageContainerHome,
+  StyledRadioButtonsThree,
   StyledSearch,
   StyledTextHome,
   StyledUl,
@@ -16,26 +17,10 @@ export default function Home() {
   const recipeList = useStore(state => state.recipeList);
   const [recipesToShow, setRecipesToShow] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [sort, setSort] = useState(null);
   const hydrated = useHydration();
   const hasRecipes = recipeList.length > 0;
   const hasFound = recipesToShow.length > 0;
-
-  const [sort, setSort] = useState(null);
-
-  function handleSorting(asc = true) {
-    const sorted = [...recipesToShow].sort((a, b) => {
-      if (asc) {
-        return a.recipeTitle.localeCompare(b.recipeTitle, 'de', {
-          sensitivity: 'base',
-        });
-      } else {
-        return b.recipeTitle.localeCompare(a.recipeTitle, 'de', {
-          sensitivity: 'base',
-        });
-      }
-    });
-    setRecipesToShow(sorted);
-  }
 
   useEffect(() => {
     setRecipesToShow(
@@ -84,21 +69,6 @@ export default function Home() {
               ></input>
             </StyledSearch>
 
-            <button
-              onClick={() => {
-                setSort(true);
-              }}
-            >
-              Sortieren A-Z
-            </button>
-            <button
-              onClick={() => {
-                setSort(false);
-              }}
-            >
-              Sortieren Z-A
-            </button>
-
             {!hasFound && hasRecipes && (
               <StyledTextHome>
                 Es wurden keine Einträge gefunden.
@@ -110,6 +80,44 @@ export default function Home() {
                 mit dem Plus hinzu.
               </StyledTextHome>
             )}
+            <div className="radio-buttons">
+              <StyledRadioButtonsThree>
+                <input
+                  type="radio"
+                  id="A-Z"
+                  name="sorting"
+                  value="A-Z"
+                  onClick={() => {
+                    setSort(true);
+                  }}
+                />
+                <label htmlFor="A-Z">A-Z</label>
+              </StyledRadioButtonsThree>
+              <StyledRadioButtonsThree>
+                <input
+                  type="radio"
+                  id="Z-A"
+                  name="sorting"
+                  value="Z-A"
+                  onClick={() => {
+                    setSort(false);
+                  }}
+                />
+                <label htmlFor="Z-A">Z-A</label>
+              </StyledRadioButtonsThree>
+              <StyledRadioButtonsThree>
+                <input
+                  type="radio"
+                  id="noSorting"
+                  name="sorting"
+                  value="noSorting"
+                  onClick={() => {
+                    setSort();
+                  }}
+                />
+                <label htmlFor="noSorting">keine Sortierung</label>
+              </StyledRadioButtonsThree>
+            </div>
 
             <StyledUl>
               {recipesToShow.map(recipe => {
