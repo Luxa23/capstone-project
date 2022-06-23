@@ -4,7 +4,7 @@ const StyledForm = styled.form`
   display: grid;
 
   &.form--other-active {
-    grid-template-rows: 3rem 3rem 10rem 3rem 3rem 3rem 1fr;
+    grid-template-rows: 3rem 1fr 10rem 3rem 3rem 3rem 1fr;
     justify-items: center;
     row-gap: 0.75rem;
     padding: 1rem;

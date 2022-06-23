@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledSearch = styled.div`
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   place-self: center;
 
   input {

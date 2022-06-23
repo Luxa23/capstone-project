@@ -1,27 +1,22 @@
 import styled from 'styled-components';
 
-const StyledRadioButton = styled.div`
+const StyledRadioButtonsThree = styled.div`
   float: left;
-  margin: 0 5px 0 0;
-  width: 9rem;
-  height: 40px;
+  margin: 0 0.5rem 0 0;
 
   label,
   input {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background: #e5cdd0;
     border-radius: 5px;
     font-family: var(--font-family);
     color: #666666;
   }
-
   input[type='radio'] {
-    opacity: 0.011;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
     z-index: 100;
-    width: 8rem;
+    width: 4rem;
   }
 
   input[type='radio']:checked + label {
@@ -32,8 +27,7 @@ const StyledRadioButton = styled.div`
   }
 
   label {
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
-
-export default StyledRadioButton;
+export default StyledRadioButtonsThree;
