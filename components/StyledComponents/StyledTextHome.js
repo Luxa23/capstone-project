@@ -6,8 +6,7 @@ const StyledTextHome = styled.p`
   margin: 0;
   padding: 0 2rem 0 3.5rem;
   align-self: start;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-row-start: 4;
   grid-column-start: 1;
   grid-column-end: 2;
 `;
