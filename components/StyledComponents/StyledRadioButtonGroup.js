@@ -37,13 +37,9 @@ const StyledRadioButtonGroup = styled.fieldset`
     text-rendering: auto;
   }
 
-  /* &.radiobuttons-nextToEachOther {
-    display: flex;
-  } */
-
   p {
     margin: 0;
-    padding: 1.25rem 0.5rem 0;
+    padding: 2rem 0.5rem 0;
     font-weight: 600;
   }
 `;
